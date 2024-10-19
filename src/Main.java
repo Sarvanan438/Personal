@@ -15,7 +15,33 @@ import java.util.Arrays;
  *                          getActiveAccounts instead of size  or accounts because there might be way too many instances of the same names
  *                          Like using e for error which is bad
  *
- * 6. Avoid encoding : Like userNameString : this encodes the type or userList . the issue here is when the
+ * 6. Avoid encoding : Like userNameString : this encodes the type  . the issue here is when the
+ *                      better use UserName username ; create type objects
+ *                      Instead use Implementation like the design patterns , underlying ds like UserFactory, UserIdMap etc
+ *
+ *
+ * 7. Avoid mental mapping: use clear names , don't let user mentally map the given to something that gives context
+ *                          Ex : naming a variable r which contains a url makes the reader mentally map r as url within the context, its
+ *                          better to name it url within the context or more preferabley {context}Url;
+ * 8. Class names should be nouns not verbs : Account  , AccountAddress is good but AccountInfo, AccountData not good they look like verb
+ * 9. Method naming : Use verb for methods with actions like postPayment , save etc
+ *                     ,accessor, mutators and predicates should prefix the value with set, get and is like setName, getName, isNameNull
+ *
+ *                    Use static factory method that gives info about the overloaded constructor and the arguments when overlading constructor
+ *
+ *                    Complex fulcrumPoint = Complex.FromRealNumber(23.0); is bad
+ *                    Complex fulcrumPoint = new Complex(23.0); good
+ * 10. Pick one word per concept : For a specific concept use the same word throughout don't use synonym or similar names
+ *              Example : getting data can be conveyed using fetch,retrieve and get . So pick one and use the same don't mix
+ *
+ * 11. Don't use the same word for other concept: if get is used for api call don't use for accessors
+ * 12. Use solution domain names : like use the implementation names like if u are using binary search for finding accounts from sorted array
+ *                                   then use BinarySearchNameSortedAccounts
+ *  13. Use problem domain names: I.e if solution domain names can't be used / isn't that generic than use the problem statement/ domain which
+ *                                  The software is trying to build on so that common names / problem domain understanding can be related
+ *
+ *  14.
+ *
  */
 public class Main {
     // this function states that it finds max and using the parameters we can say it finds max of 2 numbers
