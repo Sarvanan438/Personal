@@ -1,0 +1,2 @@
+So behavioral patterns talk about algorithms and the responsibility of each object , This states the responsibilities , segregation of concenr
+basically divides the solution into responsibilities which each objects are needed to perform

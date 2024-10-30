@@ -1,0 +1,2 @@
+Basically structural design pattern talks about the structure of the code how each objects communicate with each other,
+assemmble them to create a bigger object . So creating the structure is what is done by the structural design pattern

@@ -4,8 +4,82 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95c63071-51f5-4b0c-a065-c28cbacfd77f" name="Changes" comment="Functional design concepts notes and samples">
-      <change afterPath="$PROJECT_DIR$/src/ObjectsAndDS.java" afterDir="false" />
+    <list default="true" id="95c63071-51f5-4b0c-a065-c28cbacfd77f" name="Changes" comment="Object and ds design concepts">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/behavioral/basics.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/behavioral/media/state/BaseMediaState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/behavioral/media/state/FastForwardMediaState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/behavioral/media/state/Media.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/behavioral/media/state/MediaControl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/behavioral/media/state/MediaPlayState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/behavioral/media/state/MediaPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/behavioral/media/state/MediaPlayerContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/behavioral/media/state/MediaPlayerSetting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/behavioral/media/state/MediaState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/behavioral/media/state/MediaStateChanger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/behavioral/media/state/MediaStateFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/behavioral/media/state/MediaStateType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/behavioral/media/state/NullableMediaPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/behavioral/media/state/PauseMediaState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/behavioral/media/state/PlayMediaState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/behavioral/media/state/SimpleMediaPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/behavioral/media/state/SimpleMediaSettings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/behavioral/media/state/SimpleMediaStateChanger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/behavioral/media/state/StopMediaState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/creational/Basics.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/creational/FactoryMethod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/creational/meals/Beverage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/creational/meals/DOMINOESMealBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/creational/meals/Instructions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/creational/meals/MainCourse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/creational/meals/MealBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/creational/meals/MealBuilderFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/creational/meals/SideDish.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/creational/notification/EmailNotification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/creational/notification/Notification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/creational/notification/NotificationData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/creational/notification/NotificationFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/creational/notification/NotificationSystem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/creational/notification/SMSNotification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/basics.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/coffee/decorator/AlmondMilk.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/coffee/decorator/BaseCoffeeItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/coffee/decorator/CoffeeFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/coffee/decorator/CoffeeItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/coffee/decorator/CoffeeMaker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/coffee/decorator/EmptyCoffeeItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/coffee/decorator/FlavourShots.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/coffee/decorator/Milk.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/coffee/decorator/Sugar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/coffee/decorator/Sweetners.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/coffee/decorator/Vanilla.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/payment/adapter/PayPalPaymentAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/payment/adapter/PayPalPaymentInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/payment/adapter/PayPalPaymentProviderCreator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/payment/adapter/PayPalPaymentProviderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/payment/adapter/PaymentDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/payment/adapter/PaymentInformation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/payment/adapter/PaymentProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/payment/adapter/PaymentProviderSelector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/payment/adapter/PaymentReceipt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/payment/adapter/PaymentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/payment/adapter/PaymentStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/payment/adapter/PaymentSystemSimulator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/payment/adapter/RefundDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/payment/adapter/RefundReceipt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/proxy/server/AccessControl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/proxy/server/AccessControlProxy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/proxy/server/AccessPolicy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/proxy/server/LoggerProxy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/proxy/server/MainServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/proxy/server/ProxyServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/proxy/server/ProxyServerDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/proxy/server/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/proxy/server/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/proxy/server/ServerFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/proxy/server/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/proxy/server/UserAccessControl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/structural/proxy/server/UserSessionMeta.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,6 +90,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -36,13 +111,58 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.NotificationSystem.executor": "Run",
+    "Application.PaymentSystemSimulator.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="DesignPatterns.behavioral.media.state" />
+      <recent name="DesignPatterns.structural.proxy.server" />
+      <recent name="DesignPatterns.structural.payment.adapter" />
+      <recent name="DesignPatterns.creational.meals" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.PaymentSystemSimulator">
+    <configuration name="NotificationSystem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DesignPatterns.creational.notification.NotificationSystem" />
+      <module name="Design" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="DesignPatterns.creational.notification.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PaymentSystemSimulator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DesignPatterns.structural.payment.adapter.PaymentSystemSimulator" />
+      <module name="Design" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="DesignPatterns.structural.payment.adapter.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.PaymentSystemSimulator" />
+        <item itemvalue="Application.NotificationSystem" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -76,13 +196,22 @@
       <option name="project" value="LOCAL" />
       <updated>1729448949641</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Object and ds design concepts">
+      <option name="closed" value="true" />
+      <created>1729538133507</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1729538133507</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Added naming convention concepts" />
     <MESSAGE value="Functional design concepts notes and samples" />
-    <option name="LAST_COMMIT_MESSAGE" value="Functional design concepts notes and samples" />
+    <MESSAGE value="Object and ds design concepts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Object and ds design concepts" />
   </component>
 </project>
