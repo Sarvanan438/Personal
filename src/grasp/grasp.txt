@@ -1,0 +1,90 @@
+GRASP : General Responsibility assignment software patterns
+
+Grasp principles focus on assigning responsibility to objects in such a way that it enhances the maintainability , reusability and flexibity
+of the objects and software
+
+There are 9 principles that govern the assignment of responsibilities to objects that helps enhance maintainence and reusablity
+
+1. Information expert :
+    Assign responsibility to that class which has major of the info needed for the functionality, because the needed information are within
+    the same class this helps reduce tight coupling,abstraction leak , improves encapsulation and cohesion i.e keeping code that changes together
+    within the same encapsulation
+
+2.  Creator
+    The creation of object should be done by the class which has all the information to create it and also is used . This builds cohesion by
+    keeping the object creation logic by the class using it. But this creates tight coupling as the object has the responsibility
+    to create object in addition , also this creates tight coupling and tracking other things which might not be needed.
+
+    This also poses problems while decoupling or breaking down a class into smaller classes as you breakdown the smaller class based on the
+    commonly used properties grouped together
+
+3. Controller
+    The controller is the entry point to handle certain events , this controller should handle the events passed .
+    The responsibility of handling similar events should be within that controller . The responsibility of controller to map event to handler
+    it should not have any bussiness logic just map the handler for the event
+
+4. low coupling
+    Minimize direct dependencies on other classes , keep the dependencies low and don't use direct independencies . Instead depend on abstraction
+    This will help the classes change independently without breaking in the other part . Build the interfaces and abstraction dependecy well
+    Also use dependency inversion and injection to segregate object creation and only depend on behaviour of abstraction.
+
+5. cohesion
+    Ensure that codes that change together are grouped together . Cohesion basically talks about the tight relation and grouping .
+    This basically says that things that come together to make a functionality should be together . The classes should be narrow and do one
+    thing . The grouped things be it variables , method behaviour should be interrelated . The variables should be mostly used by all
+    behaviours unless they are accessors. The amount of usage of the object properties in the abstraction behaviour says about cohesion.
+
+    Ex: a class of shape with properties has behaviour permiter and area
+    class Square{
+        int lenght,breath;
+
+       double permiter(){
+        return (length+breadth)*2
+        }
+
+        double area(){
+        return length *breadth;
+        }
+    }
+
+    here in the class both area and perimeter uses the properties in both function hence highly cohesive
+
+
+    class Employee {
+
+        int salary , dob,designation,holidays;
+
+        getBonus(){
+               return salary *designation *10%;
+        }
+
+        getHolidays(){
+                return holidayList[designation];
+        }
+    }
+
+    here the class doesn't use all properties in all the behaviours the cohesion is good but not as good as first one
+
+
+ 6. Polymorphism
+    use polymorphism for multiple variations of same behaviour with different implementation.
+    This goes well with having loose coupling . Having polymorphism helps with having different types of same contract/behaviour interface
+    This way based on scenario the implementation changes while behaviour contract
+
+ 7. Pure fabrication
+    Create classes without any real world concept just to handle certain responsibilities like factory for object creation , Logger for logging different context
+    improves separation of concerns, keeping business logic separate from other responsibilities like logging or formatting.
+
+ 8.Indirection
+    Introduce intermediary to mediate interaction between components , this will reduce the tight coupling by letting the mediatator class handle
+    the mediating between two classes based on certain abstraction , this will reduce direct coupling between both classes
+    any changes will only result in the changes of two classes at max , keeping the main classes independent
+
+ 9. Protected variations
+    Protect elements from variations of different dependent components by encapsulating them behind abstractions or interface . This reduces the impact of variations
+    from the 3rd part libraries . This way the changes in the 3rd party libs or variating code keeps the abstraction same but the encapsulating wrapper
+    handle the changes of behaviour from class
+
+
+
+
