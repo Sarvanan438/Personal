@@ -2,3 +2,13 @@ These patterns provide a way to create objects and is mainly used to seperate th
 This helps seperating and making the code decoupled so as to individually assign responsibility
 This also helps with SOLID by keeping the creational responsibilty to the one good at it, helps with Interfaces, Dependency inversion and
 also should most probably follow the liskov substitution as the object creation follows a specific pattern/contract
+
+
+Factory pattern :
+    The factory pattern is responsible for creation of a component, the factory is responsible for stitching the dependencies needed
+    It can use various ways like direct initiation, construction injection (by creating an instance of factory class) , method injection
+    DI container or composing factory for each dependency .
+
+    But the assembling , setting up the internal properties is the job of factory pattern
+
+

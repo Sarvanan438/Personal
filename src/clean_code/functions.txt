@@ -1,0 +1,152 @@
+1. functions should be small and should do just one thing , it should be at max 5-20 lines .
+2. The indentation of a function should be at max one or two . because more nesting means the function is large and it is not delegating
+enough.
+3. The function should do just one thing :
+    One thing is the code that does exactly what the function names says it does and it only has code for one abstraction level below
+    the name .
+    The reason functions exist is to decompose larger concepts. So the top levels would just delegate to lower levels
+    The code of function should only have statements that for the next abstraction breakdown
+
+    Example CreateUserAndNotify(User ){
+
+        if(db)
+        this.db.save(User)
+        else throw error('no connection');
+        this.notification.notify(Config,User);
+    }
+
+    So here the function is  a higher level of CreatingUserAndnotifying it
+    So here one thing means breaking down the concept of creating user into smaller parts which are creating user and notifying
+    So the function here should only call/delegate to two abstractions i.e creating user and notify abstraction
+    The implementation details like where it is saved, how to handle or provision resource for it would be the details of the lower abstraction
+
+    Here the code is doing multiple abstraction level i.e it is also implementing the code for atleast second level of abstraction
+    i.e checking db and knowing that it is saved in db and also the notify part where it is aware of config etc
+
+    So wrong
+    Correct implementation
+    function CreateUser(User){
+        // implementation for creating user
+    }
+
+    function notify(User){
+        // implementation of notify
+    }
+
+    refactoring createUserAndNotify(User){
+        CreateUser(User);
+        notify(User);
+    }
+
+    As here the abstraction are used and only next level abstraction is seen by createUserAndNotify , it doesn't know how save user or notify
+    works
+
+    any errors will be thrown
+
+4. Always follow top down narrative rule in developing concepts . The functions should break down and exploring them should narrate
+the implementation in top down fashion like createUserAndNotify() calls createUser to save user and on success calls notification to notify
+CreateUser will use database to save the model
+
+5. switch statements
+    Make switch statements burried at the lowest level of the implementation and make sure the switch statements are not repeated for
+    that particular need .
+    public Money calculatePay(Employee e)
+    throws InvalidEmployeeType {
+     switch (e.type) {
+     case COMMISSIONED:
+     return calculateCommissionedPay(e);
+     case HOURLY:
+     return calculateHourlyPay(e);
+     case SALARIED:
+     return calculateSalariedPay(e);
+     default:
+     throw new InvalidEmployeeType(e.type);
+     }
+     }
+
+     This function calculates pay for employees and based on the employee type the pay happens
+
+     The problem here is in the future if there is something different like calculate bonues ,we need to again create another
+     switch statement
+
+     Instead if we let the calculation of these to the interface or class of Employee then all we need to do is return
+     Employee class . So the switch only changes when the type changes . Basically use a abstract factory
+
+     public abstract class Employee {
+      public abstract boolean isPayday();
+      public abstract Money calculatePay();
+      public abstract void deliverPay(Money pay);
+     }
+     -----------------
+     public interface EmployeeFactory {
+      public Employee makeEmployee(EmployeeRecord r) throws InvalidEmployeeType;
+     }
+     -----------------
+     public class EmployeeFactoryImpl implements EmployeeFactory {
+      public Employee makeEmployee(EmployeeRecord r) throws InvalidEmployeeType {
+      switch (r.type) {
+      case COMMISSIONED:
+      return new CommissionedEmployee(r) ;
+      case HOURLY:
+      return new HourlyEmployee(r);
+      case SALARIED:
+      return new SalariedEmploye(r);
+      default:
+      throw new InvalidEmployeeType(r.type);
+      }
+      }
+     }
+
+5. Function arguments
+    Ideal function arguments are no arguments but 1-3 arguments is max , anything more we should create a structure for it like DTO
+
+    Never modify the arguments as return values , always send out new values as output if thinking of modifying argument value.
+
+    Monadic : 1 arg function
+        Common patterns
+        1. asking something on the argument like isFileExists(file)
+        2. Operate on the argument transform and return values ex : fileOpen(file) : returns readable stream object
+
+        Never use flag arguments instead create 2 different function execution and call it conditionally
+
+    Dyadic function
+        Strive to use member functions to avoid extra args like writeFieldToFile(file,field) can be refactored
+        file.writeField(field)
+
+        Dyadic functions mostly are odered pairs i.e they make sense in order and pairs , so these type are better suited
+
+    triads
+        3 args : make sure they make sense in triplet ways
+
+    Argument object
+        When using more than 2 or 3 and the arguments can be grouped into a structure do it . It may that only certain args
+        can be grouped so be it , its ok to create multiple objects if needed too.
+
+    Name functions such that the name is verb and the args form a noun  ,so a verb noun pair
+
+6. The function execution should be predictable by name and args . Function should not have side effects and should behave the same
+under the same input and output .
+    As much as possible build functions such that they only depend on the class attributes and behaviours and the inputs
+    It should not majorly depend on the global variable or side effects like other things
+    API call , db connection etc are fine these are expected
+
+    But a function depending on the global variable is not because there is no specific contract and it can change abruptly
+
+    Example authenticateUser only successfull when global variable x has value true ; But the authenticateUser might not know this
+    because any other function can change it without notice as its hard to track usage
+        we can change name authenticateUserIfXtrue or not depend on side effects . Keep them predictable
+
+7. Command query seperation
+    A function call should either query for information or Command for certain execution/transformation etc like process and return
+    It should not do both,
+    Functions should either do something or answer something, but not both. Either your
+    function should change the state of an object, or it should return some information about
+    that object. Doing both often leads to confusion.
+
+    public boolean set(String attribute, String value);
+
+    This confuses as to wheter it sets the value to attribute or whether it return true when the attribute has value equal to that .
+8. Always prefer exceptions over error codes
+
+9. Follow DRY
+    extract frequent similar statements or executions and abstract it so as to not repeat

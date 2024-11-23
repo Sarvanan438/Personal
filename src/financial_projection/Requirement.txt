@@ -1,0 +1,14 @@
+The financial projection should project the financial condition of the project
+Provided the cost , selling and unit production per time period
+
+So we need to calculate
+Profit and loss projection
+revenue projection
+break even projection
+
+
+lets concentrate on profit and loss
+
+basically selling * unit - cost * unit gives the projection , The same for time period
+
+revenue is selling * unit for projection
