@@ -1,3 +1,4 @@
+import 
 /**
  * 1. Functions should be small at max they should be around 20 lines long
  * 2. Max 2 indents and keep the if , while else one line if possible , may be extract the logic to function and call it
@@ -40,7 +41,7 @@
  *
  *  8. Functions nammes :  use verb to indicate the action of unction and nouns for args to make a descriptive intuition
  *              example writeToFile(name)
- *  9.Avoid using side effects in function : A function should do what the function name describes it to do , it should do hidden things
+ *  9.Avoid using side effects in function : A function should do what the function name describes it to do , it should not do hidden things
  *                                          This creates a temporal coupling that works on certain hidden condition only
  *                                          Like createUser() which indicates creating user but if it also does the notifying part
  *                                          like message then failure of message but create problems during dubuggin as to why notification
