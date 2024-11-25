@@ -1,3 +1,5 @@
+package clean_code;
+
 public class EmployeeTypeConstants {
 
      public static final  String CONTRACT="CONTRACT";

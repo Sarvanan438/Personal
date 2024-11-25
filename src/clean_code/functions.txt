@@ -7,12 +7,12 @@ enough.
     The reason functions exist is to decompose larger concepts. So the top levels would just delegate to lower levels
     The code of function should only have statements that for the next abstraction breakdown
 
-    Example CreateUserAndNotify(User ){
+    Example CreateUserAndNotify(clean_code.User ){
 
         if(db)
-        this.db.save(User)
+        this.db.save(clean_code.User)
         else throw error('no connection');
-        this.notification.notify(Config,User);
+        this.notification.notify(Config,clean_code.User);
     }
 
     So here the function is  a higher level of CreatingUserAndnotifying it
@@ -25,17 +25,17 @@ enough.
 
     So wrong
     Correct implementation
-    function CreateUser(User){
+    function CreateUser(clean_code.User){
         // implementation for creating user
     }
 
-    function notify(User){
+    function notify(clean_code.User){
         // implementation of notify
     }
 
-    refactoring createUserAndNotify(User){
-        CreateUser(User);
-        notify(User);
+    refactoring createUserAndNotify(clean_code.User){
+        CreateUser(clean_code.User);
+        notify(clean_code.User);
     }
 
     As here the abstraction are used and only next level abstraction is seen by createUserAndNotify , it doesn't know how save user or notify
@@ -50,7 +50,7 @@ CreateUser will use database to save the model
 5. switch statements
     Make switch statements burried at the lowest level of the implementation and make sure the switch statements are not repeated for
     that particular need .
-    public Money calculatePay(Employee e)
+    public Money calculatePay(clean_code.Employee e)
     throws InvalidEmployeeType {
      switch (e.type) {
      case COMMISSIONED:
@@ -69,21 +69,21 @@ CreateUser will use database to save the model
      The problem here is in the future if there is something different like calculate bonues ,we need to again create another
      switch statement
 
-     Instead if we let the calculation of these to the interface or class of Employee then all we need to do is return
-     Employee class . So the switch only changes when the type changes . Basically use a abstract factory
+     Instead if we let the calculation of these to the interface or class of clean_code.Employee then all we need to do is return
+     clean_code.Employee class . So the switch only changes when the type changes . Basically use a abstract factory
 
-     public abstract class Employee {
+     public abstract class clean_code.Employee {
       public abstract boolean isPayday();
       public abstract Money calculatePay();
       public abstract void deliverPay(Money pay);
      }
      -----------------
      public interface EmployeeFactory {
-      public Employee makeEmployee(EmployeeRecord r) throws InvalidEmployeeType;
+      public clean_code.Employee makeEmployee(EmployeeRecord r) throws InvalidEmployeeType;
      }
      -----------------
      public class EmployeeFactoryImpl implements EmployeeFactory {
-      public Employee makeEmployee(EmployeeRecord r) throws InvalidEmployeeType {
+      public clean_code.Employee makeEmployee(EmployeeRecord r) throws InvalidEmployeeType {
       switch (r.type) {
       case COMMISSIONED:
       return new CommissionedEmployee(r) ;

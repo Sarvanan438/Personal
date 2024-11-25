@@ -1,4 +1,4 @@
-/**
+package clean_code; /**
  * The concepts give clear meaning of the boundaries , responsibilities ,limits ,defination and usage
  *
  * Private variables are made to keep them not exposed and have the freedom to change them within the enclosure without worrying

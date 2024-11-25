@@ -9,6 +9,7 @@ public class SimpleUserService implements UserService{
         this.validator = validator;
         this.sanitzer = sanitzer;
     }
+    // improve with Chain of resposibility principle
     public void validateUser(User user){
         if(this.validator.validateEmail(user.getEmail()) && this.validator.validatePassword(user.getPassword()))
             return;

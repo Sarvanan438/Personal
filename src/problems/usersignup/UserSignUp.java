@@ -17,7 +17,7 @@ package problems.usersignup;
 
 /**
  * Saving user
- * save the user and return saved User
+ * save the user and return saved clean_code.User
  */
 
 /**
@@ -30,12 +30,12 @@ package problems.usersignup;
  * 1. as signup businness logic includes saving user and sending welcome email
  *      because in the future if we decide to change the sign up to include send message this would be mean all even endpoint
  *      i.e controller to change
- * 2. So having a single business logic endpoint will be better , let name it handleUserSingup : this is not User service
+ * 2. So having a single business logic endpoint will be better , let name it handleUserSingup : this is not clean_code.User service
  * but will use both user service and email service
  */
 
 /**
- * User service will have functionality related to user implementation . This will be a object
+ * clean_code.User service will have functionality related to user implementation . This will be a object
  * As it will only expose abstractions related to user , like transform ,save , get etc . Basically have user accessors and
  * functionality like send welcome email for a user
  * functions
@@ -53,7 +53,7 @@ package problems.usersignup;
  */
 
 /**
- * User like a active record has navigational methods like save etc
+ * clean_code.User like a active record has navigational methods like save etc
  * The save will use user repository to save , the actual save and find will be handled by this repository
  */
 

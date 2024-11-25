@@ -35,7 +35,7 @@ There are 9 principles that govern the assignment of responsibilities to objects
     behaviours unless they are accessors. The amount of usage of the object properties in the abstraction behaviour says about cohesion.
 
     Ex: a class of shape with properties has behaviour permiter and area
-    class Square{
+    class clean_code.Square{
         int lenght,breath;
 
        double permiter(){
@@ -50,7 +50,7 @@ There are 9 principles that govern the assignment of responsibilities to objects
     here in the class both area and perimeter uses the properties in both function hence highly cohesive
 
 
-    class Employee {
+    class clean_code.Employee {
 
         int salary , dob,designation,holidays;
 

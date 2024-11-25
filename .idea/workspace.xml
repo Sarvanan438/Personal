@@ -4,28 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95c63071-51f5-4b0c-a065-c28cbacfd77f" name="Changes" comment="Functions Clean code">
-      <change afterPath="$PROJECT_DIR$/src/problems/usersignup/Email.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/usersignup/EmailCreator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/usersignup/EmailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/usersignup/MemoryStorage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/usersignup/MockEmailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/usersignup/RegisterationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/usersignup/Repository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/usersignup/Sanitzer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/usersignup/SimpleSanitizer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/usersignup/SimpleUserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/usersignup/SimpleValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/usersignup/Storage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/usersignup/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/usersignup/UserCreator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/usersignup/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/usersignup/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/usersignup/UserSignUp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/usersignup/Validator.java" afterDir="false" />
+    <list default="true" id="95c63071-51f5-4b0c-a065-c28cbacfd77f" name="Changes" comment="Solving user signup with cc,solid,oops and design patterns">
+      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/BookManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/BookRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/BookService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/FileManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/FilePersistence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/FileService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/FilterKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/Persistence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/Repository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/SimpleBookRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/SimpleBookService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/SimpleFileCreator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/SimpleFileService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FunctionDesignConcepts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FunctionDesignConcepts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clean_code/OrderRevenueSummary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clean_code/OrderRevenueSummary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ContractEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clean_code/ContractEmployee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clean_code/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EmployeeTypeConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clean_code/EmployeeTypeConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FunctionDesignConcepts" beforeDir="false" afterPath="$PROJECT_DIR$/src/clean_code/FunctionDesignConcepts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clean_code/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ObjectsAndDS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clean_code/ObjectsAndDS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PermanentEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clean_code/PermanentEmployee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clean_code/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VoidEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clean_code/VoidEmployee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clean_code/functions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/clean_code/functions.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/grasp/grasp.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/grasp/grasp.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/problems/usersignup/SimpleUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/usersignup/SimpleUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/problems/usersignup/UserSignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/usersignup/UserSignUp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +65,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.BookManager.executor": "Run",
     "Application.NotificationSystem.executor": "Run",
     "Application.PaymentSystemSimulator.executor": "Run",
     "Application.UserSignUp.executor": "Run",
@@ -69,13 +77,30 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="problems.SOLID.LibraryManagement" />
       <recent name="DesignPatterns.behavioral.media.state" />
       <recent name="DesignPatterns.structural.proxy.server" />
       <recent name="DesignPatterns.structural.payment.adapter" />
       <recent name="DesignPatterns.creational.meals" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/clean_code" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.UserSignUp">
+  <component name="RunManager" selected="Application.BookManager">
+    <configuration name="BookManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="problems.SOLID.LibraryManagement.BookManager" />
+      <module name="Design" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="problems.SOLID.LibraryManagement.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="NotificationSystem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DesignPatterns.creational.notification.NotificationSystem" />
       <module name="Design" />
@@ -117,6 +142,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BookManager" />
         <item itemvalue="Application.UserSignUp" />
         <item itemvalue="Application.PaymentSystemSimulator" />
         <item itemvalue="Application.NotificationSystem" />
@@ -188,7 +214,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732386226495</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Solving user signup with cc,solid,oops and design patterns">
+      <option name="closed" value="true" />
+      <created>1732472796815</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1732472796815</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -199,6 +233,7 @@
     <MESSAGE value="Design patterns" />
     <MESSAGE value="GRASP notes" />
     <MESSAGE value="Functions Clean code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Functions Clean code" />
+    <MESSAGE value="Solving user signup with cc,solid,oops and design patterns" />
+    <option name="LAST_COMMIT_MESSAGE" value="Solving user signup with cc,solid,oops and design patterns" />
   </component>
 </project>

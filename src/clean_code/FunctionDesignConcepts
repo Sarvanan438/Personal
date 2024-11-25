@@ -69,7 +69,7 @@ public static class FunctionDesignConcepts {
      * here all the function does is call the abstraction to create user and notify event
      * it doesn't have logic to actually create a user and handle notifying the event . it is not he functions job
      */
-    public void createUserAndNotifyEvent(User user){
+    public void createUserAndNotifyEvent(clean_code.User user){
 
         try {
             user.save();
@@ -91,14 +91,14 @@ public static class FunctionDesignConcepts {
      *
      */
 }
-    public Employee employeeByType(String type){
+    public clean_code.Employee employeeByType(String type){
       switch (type){
-          case EmployeeTypeConstants.CONTRACT :
-              return new ContractEmployee();
-          case EmployeeTypeConstants.PERMANENT:
-              return new PermanentEmployee();
+          case clean_code.EmployeeTypeConstants.CONTRACT :
+              return new clean_code.ContractEmployee();
+          case clean_code.EmployeeTypeConstants.PERMANENT:
+              return new clean_code.PermanentEmployee();
       }
-      return new VoidEmployee();
+      return new clean_code.VoidEmployee();
     }
 
 public void main() {
