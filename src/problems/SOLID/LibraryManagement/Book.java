@@ -1,5 +1,7 @@
 package problems.SOLID.LibraryManagement;
 
+import java.util.Arrays;
+
 /**
  * This object will be responsible for serializing and deserializing in addition to object properties accessor
  */
@@ -38,11 +40,13 @@ public class Book{
 
     @Override
     public String toString() {
-        return STR."author=\{author}, title='\{title}, ISBN='\{ISBN}\n";
+        return STR."author=\{author}, title=\{title}, ISBN=\{ISBN}\n";
     }
-
+    public static String  splitKeyValue(String key){
+        return key.trim().split("=")[1];
+    }
     public static Book createBookFromString(String bookDetails){
-        String[] properties = bookDetails.split(",");
+        String[] properties = Arrays.stream(bookDetails.split(",")).map(Book::splitKeyValue).toList().toArray(new String[0]);
         return new Book(properties[0],properties[1],properties[2]);
     }
 }

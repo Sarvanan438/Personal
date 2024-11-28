@@ -1,6 +1,5 @@
-package problems.SOLID.LibraryManagement;
+package problems.SOLID.LibraryManagement.service;
 
-import java.io.File;
 import java.io.IOException;
 
 public interface FileService {

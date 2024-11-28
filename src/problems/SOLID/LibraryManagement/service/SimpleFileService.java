@@ -1,6 +1,5 @@
-package problems.SOLID.LibraryManagement;
+package problems.SOLID.LibraryManagement.service;
 
-import java.io.EOFException;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -19,14 +18,14 @@ public class SimpleFileService implements FileService
     @Override
     public void write(String content) throws IOException {
         this.writer.write(content);
+        this.writer.flush();
     }
 
     @Override
     public String readLine() {
-        if(this.hasLine()){
+
             return this.reader.nextLine();
-        }
-        return "";
+
     }
 
     @Override

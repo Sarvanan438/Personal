@@ -5,34 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95c63071-51f5-4b0c-a065-c28cbacfd77f" name="Changes" comment="Solving user signup with cc,solid,oops and design patterns">
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/BookManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/BookRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/BookService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/FileManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/FilePersistence.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/FileService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/FilterKey.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/Persistence.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/Repository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/SimpleBookRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/SimpleBookService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/SimpleFileCreator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/SimpleFileService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/BookCreatorFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/bookfilter/BookFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/bookfilter/BookFilterByTitle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/bookfilter/BookFilterFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ContractEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clean_code/ContractEmployee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clean_code/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EmployeeTypeConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clean_code/EmployeeTypeConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FunctionDesignConcepts" beforeDir="false" afterPath="$PROJECT_DIR$/src/clean_code/FunctionDesignConcepts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clean_code/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ObjectsAndDS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clean_code/ObjectsAndDS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PermanentEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clean_code/PermanentEmployee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clean_code/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VoidEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clean_code/VoidEmployee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clean_code/functions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/clean_code/functions.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/grasp/grasp.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/grasp/grasp.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/usersignup/SimpleUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/usersignup/SimpleUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/usersignup/UserSignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/usersignup/UserSignUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/BookManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/BookManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/BookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/FileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/FilePersistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/persistence/FilePersistence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/FileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/Persistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/persistence/Persistence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/SimpleBookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/SimpleBookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/SimpleBookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/SimpleBookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/SimpleFileCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/SimpleFileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/SimpleFileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/SimpleFileService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +55,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.BookManager.executor": "Run",
+    "Application.BookManager.executor": "Debug",
     "Application.NotificationSystem.executor": "Run",
     "Application.PaymentSystemSimulator.executor": "Run",
     "Application.UserSignUp.executor": "Run",
@@ -93,7 +83,7 @@
       <module name="Design" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="problems.SOLID.LibraryManagement.*" />
+          <option name="PATTERN" value="problems.SOLID.LibraryManagement.bookfilter.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -222,7 +212,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732472796815</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Solving user signup with cc,solid,oops and design patterns">
+      <option name="closed" value="true" />
+      <created>1732560022963</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1732560022963</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -235,5 +233,26 @@
     <MESSAGE value="Functions Clean code" />
     <MESSAGE value="Solving user signup with cc,solid,oops and design patterns" />
     <option name="LAST_COMMIT_MESSAGE" value="Solving user signup with cc,solid,oops and design patterns" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/SimpleBookRepository.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/bookfilter/BookFilterByTitle.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/persistence/FilePersistence.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
