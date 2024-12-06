@@ -4,25 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95c63071-51f5-4b0c-a065-c28cbacfd77f" name="Changes" comment="Solving user signup with cc,solid,oops and design patterns">
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/BookCreatorFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/bookfilter/BookFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/bookfilter/BookFilterByTitle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/bookfilter/BookFilterFactory.java" afterDir="false" />
+    <list default="true" id="95c63071-51f5-4b0c-a065-c28cbacfd77f" name="Changes" comment="Implement library management">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/apache_pdfbox.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/jfree_jfreechart.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/bookfilter/FilterCriteria.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/bookfilter/FilterCriteriaBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/bookfilter/SimpleFilterCriteriaBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/report_generator/SprintReport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/report_generator/charts/chart/AxisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/report_generator/charts/chart/Chart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/report_generator/charts/chart/ChartData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/report_generator/charts/chart/Dimension.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/report_generator/charts/chart/ImgType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/report_generator/charts/chart/PieChart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/report_generator/charts/saver/ChartSaver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/report_generator/charts/saver/SaveChartAsImage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/report_generator/charts/saver/SaveChartFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/report_generator/charts/saver/SaveMeta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/report_generator/exporters/Exporter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/report_generator/exporters/PDFExporter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/report_generator/reports/Report.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/report_generator/reports/TaskPriorityReport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/report_generator/reports/generator/ReportGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Design.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Design.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/BookManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/BookManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/BookRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/FileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/FilePersistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/persistence/FilePersistence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/FileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/Persistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/persistence/Persistence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/Repository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/SimpleBookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/SimpleBookRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/SimpleBookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/SimpleBookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/SimpleFileCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/SimpleFileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/SimpleFileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/SimpleFileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/bookfilter/BookFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/bookfilter/BookFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/persistence/FilePersistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/persistence/FilePersistence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/BookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/SimpleBookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/SimpleBookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/FileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/SimpleBookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/SimpleBookService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,23 +69,34 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.BookManager.executor": "Debug",
+    "Application.BookManager.executor": "Run",
     "Application.NotificationSystem.executor": "Run",
+    "Application.PDFExporter.executor": "Run",
     "Application.PaymentSystemSimulator.executor": "Run",
+    "Application.PieChart.executor": "Run",
+    "Application.SprintReport.executor": "Run",
     "Application.UserSignUp.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true"
+    "ignore.preview.features.used": "true",
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="problems.SOLID.LibraryManagement.service" />
+      <recent name="problems.report_generator.charts.saver" />
+      <recent name="problems.report_generator.charts" />
       <recent name="problems.SOLID.LibraryManagement" />
       <recent name="DesignPatterns.behavioral.media.state" />
-      <recent name="DesignPatterns.structural.proxy.server" />
-      <recent name="DesignPatterns.structural.payment.adapter" />
-      <recent name="DesignPatterns.creational.meals" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/clean_code" />
@@ -91,12 +116,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NotificationSystem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="DesignPatterns.creational.notification.NotificationSystem" />
+    <configuration name="PDFExporter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="problems.report_generator.exporters.PDFExporter" />
       <module name="Design" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="DesignPatterns.creational.notification.*" />
+          <option name="PATTERN" value="problems.report_generator.exporters.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -104,12 +129,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PaymentSystemSimulator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="DesignPatterns.structural.payment.adapter.PaymentSystemSimulator" />
+    <configuration name="PieChart" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="problems.report_generator.charts.chart.PieChart" />
       <module name="Design" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="DesignPatterns.structural.payment.adapter.*" />
+          <option name="PATTERN" value="problems.report_generator.charts.chart.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SprintReport" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="problems.report_generator.SprintReport" />
+      <module name="Design" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="problems.report_generator.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -133,9 +171,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.BookManager" />
+        <item itemvalue="Application.SprintReport" />
+        <item itemvalue="Application.PDFExporter" />
+        <item itemvalue="Application.PieChart" />
         <item itemvalue="Application.UserSignUp" />
-        <item itemvalue="Application.PaymentSystemSimulator" />
-        <item itemvalue="Application.NotificationSystem" />
       </list>
     </recent_temporary>
   </component>
@@ -220,7 +259,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732560022963</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Implement library management">
+      <option name="closed" value="true" />
+      <created>1732775329227</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1732775329227</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -232,14 +279,15 @@
     <MESSAGE value="GRASP notes" />
     <MESSAGE value="Functions Clean code" />
     <MESSAGE value="Solving user signup with cc,solid,oops and design patterns" />
-    <option name="LAST_COMMIT_MESSAGE" value="Solving user signup with cc,solid,oops and design patterns" />
+    <MESSAGE value="Implement library management" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement library management" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/SimpleBookRepository.java</url>
-          <line>25</line>
+          <line>26</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -249,7 +297,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/persistence/FilePersistence.java</url>
-          <line>29</line>
+          <line>39</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>

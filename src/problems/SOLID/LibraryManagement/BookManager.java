@@ -2,6 +2,8 @@ package problems.SOLID.LibraryManagement;
 
 import problems.SOLID.LibraryManagement.bookfilter.BookFilterByTitle;
 import problems.SOLID.LibraryManagement.bookfilter.BookFilterFactory;
+import problems.SOLID.LibraryManagement.bookfilter.FilterCriteriaBuilder;
+import problems.SOLID.LibraryManagement.bookfilter.SimpleFilterCriteriaBuilder;
 import problems.SOLID.LibraryManagement.persistence.FilePersistence;
 import problems.SOLID.LibraryManagement.repositories.BookRepository;
 import problems.SOLID.LibraryManagement.repositories.SimpleBookRepository;
@@ -27,10 +29,21 @@ public class BookManager {
 
     }
 
-    Book[] findBook(String title) throws FileNotFoundException {
-       return this.bookService.findBy(FilterKey.TITLE,title);
-    }
+//    Book[] findBook(String title) throws FileNotFoundException {
+//        // this line makes the book manager be aware of filter key instead expose functionality from
+//        // book service like findBookByTitle as this will hide the implementation in the future if the process of filtering uses complex
+//        // filter criteria like filter by title withCase sensitive . This makes the findBook to change
+//        // Also based on Clean code functions with less params is better and books ervice is responsible for service related to book
+//       // return this.bookService.findBy(FilterKey.TITLE,title);
+//    }
 
+    Book[] findBookByTitle(String title){
+        FilterCriteriaBuilder  filterCriteriaBuilder=new SimpleFilterCriteriaBuilder()
+                .caseSensitive()
+                .addFilterByTitle(title);
+        return this.bookService.filterBy(filterCriteriaBuilder.getFilterCriteria());
+
+    }
     public static void  setUpFileDb(FilePersistence persistence) throws IOException {
         persistence.clearAll();;
     }
@@ -54,12 +67,12 @@ public class BookManager {
         setupBookFilters();
 
         bookManager.saveBook("Transformers","MartinBay","12321B1231BB");
-        Book[] book= bookManager.findBook("Transformers");
+        Book[] book= bookManager.findBookByTitle("Transformers");
         printBooks(book);
         bookManager.saveBook("Transformers2","MartinBay","12321B1231BB");
         bookManager.saveBook("Transformers3","MartinBay","12321B1231BB");
 
-        book= bookManager.findBook("Transformers2");
+        book= bookManager.findBookByTitle("Transformers2");
         printBooks(book);
     }
 }

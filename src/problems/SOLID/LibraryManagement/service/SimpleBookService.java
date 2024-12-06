@@ -2,6 +2,7 @@ package problems.SOLID.LibraryManagement.service;
 
 import problems.SOLID.LibraryManagement.Book;
 import problems.SOLID.LibraryManagement.FilterKey;
+import problems.SOLID.LibraryManagement.bookfilter.FilterCriteria;
 import problems.SOLID.LibraryManagement.repositories.BookRepository;
 
 import java.io.IOException;
@@ -19,7 +20,8 @@ public class SimpleBookService implements BookService{
     }
 
     @Override
-    public Book[] findBy(FilterKey key,String pattern) {
-        return this.bookRepository.findBy(key,pattern);
+    public Book[] filterBy(FilterCriteria filterCriteria) {
+        return this.bookRepository.findBy(filterCriteria);
     }
+
 }

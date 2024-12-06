@@ -7,15 +7,25 @@ import problems.SOLID.LibraryManagement.service.FileService;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ *
+ * Think of ways to improve cohesiveness may be extract management from
+ * true file based service ?
+ */
 public class FilePersistence implements Persistence<Book> {
-    private static final String file="books.txt";
+
+
+    private  final String file;
     private FileService fileService;
     private FileManager manager;
-    public FilePersistence(FileManager manager) throws IOException {
-
-        this.manager=manager;
+    public FilePersistence(String file,FileService fileService, FileManager manager) throws IOException {
+        this.fileService = fileService;
+        this.file=file;
+        // may be make manager take a file name as input like set file name
+        this.manager = manager;
         this.createFile();
     }
+
     private void createFile() throws IOException {
         this.fileService = this.manager.createFile(file);
     }

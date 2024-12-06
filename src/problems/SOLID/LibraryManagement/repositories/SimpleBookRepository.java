@@ -4,6 +4,7 @@ import problems.SOLID.LibraryManagement.Book;
 import problems.SOLID.LibraryManagement.FilterKey;
 import problems.SOLID.LibraryManagement.bookfilter.BookFilter;
 import problems.SOLID.LibraryManagement.bookfilter.BookFilterFactory;
+import problems.SOLID.LibraryManagement.bookfilter.FilterCriteria;
 import problems.SOLID.LibraryManagement.persistence.Persistence;
 
 import java.io.IOException;
@@ -21,10 +22,13 @@ public class SimpleBookRepository implements BookRepository {
     }
 
     @Override
-    public Book[] findBy(FilterKey key, String pattern) {
+    public Book[] findBy(FilterCriteria filterCriteria) {
         Book[] books =this.filePersistence.findAll();
-        BookFilter filter = BookFilterFactory.createBookFilter(key);
-        return filter.find(new ArrayList<>(List.of(books)),pattern);
+        for(FilterKey key: filterCriteria.getFilters().keySet()) {
+            BookFilter filter = BookFilterFactory.createBookFilter(key);
+            books=filter.find(new ArrayList<>(List.of(books)),filterCriteria.getFilters().get(key));
+        }
+        return books;
     }
 
     @Override
