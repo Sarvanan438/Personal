@@ -10,10 +10,7 @@ import problems.SOLID.LibraryManagement.repositories.BookRepository;
 import problems.SOLID.LibraryManagement.repositories.SimpleBookRepository;
 import problems.SOLID.LibraryManagement.serializer.Serializer;
 import problems.SOLID.LibraryManagement.serializer.impl.SerializeBookCSV;
-import problems.SOLID.LibraryManagement.service.BookService;
-import problems.SOLID.LibraryManagement.service.FileManager;
-import problems.SOLID.LibraryManagement.service.SimpleBookService;
-import problems.SOLID.LibraryManagement.service.SimpleFileManager;
+import problems.SOLID.LibraryManagement.service.*;
 import problems.SOLID.LibraryManagement.utilities.impl.SimpleStringUtils;
 
 import java.io.*;
@@ -61,8 +58,9 @@ public class BookManager {
     public static void main(String[] args) throws IOException,FileNotFoundException {
         FileManager fileManagermanager = new SimpleFileManager();
         Serializer<Book> bookSerializer = new SerializeBookCSV(new SimpleStringUtils());
-        FilePersistence filePersistence = new FilePersistence("books.txt",fileManagermanager,bookSerializer);
-        BookRepository bookRepository = new SimpleBookRepository(filePersistence);
+        FileService fileService = fileManagermanager.createFile("books.txt");
+        FilePersistence filePersistence = new FilePersistence(fileService);
+        BookRepository bookRepository = new SimpleBookRepository(filePersistence,bookSerializer);
         BookService bookService = new SimpleBookService(bookRepository);
         BookManager bookManager = new BookManager(bookService);
 
