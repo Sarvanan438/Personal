@@ -1,6 +1,6 @@
 package problems.SOLID.LibraryManagement.service;
 
-import problems.SOLID.LibraryManagement.Book;
+import problems.SOLID.LibraryManagement.entities.Book;
 import problems.SOLID.LibraryManagement.bookfilter.FilterCriteria;
 
 import java.io.IOException;

@@ -1,6 +1,6 @@
 package problems.SOLID.LibraryManagement.bookfilter;
 
-import problems.SOLID.LibraryManagement.Book;
+import problems.SOLID.LibraryManagement.entities.Book;
 
 import java.util.ArrayList;
 import java.util.List;

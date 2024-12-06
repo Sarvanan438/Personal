@@ -4,38 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95c63071-51f5-4b0c-a065-c28cbacfd77f" name="Changes" comment="Implement library management">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/apache_pdfbox.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jfree_jfreechart.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/bookfilter/FilterCriteria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/bookfilter/FilterCriteriaBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/bookfilter/SimpleFilterCriteriaBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/report_generator/SprintReport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/report_generator/charts/chart/AxisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/report_generator/charts/chart/Chart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/report_generator/charts/chart/ChartData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/report_generator/charts/chart/Dimension.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/report_generator/charts/chart/ImgType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/report_generator/charts/chart/PieChart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/report_generator/charts/saver/ChartSaver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/report_generator/charts/saver/SaveChartAsImage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/report_generator/charts/saver/SaveChartFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/report_generator/charts/saver/SaveMeta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/report_generator/exporters/Exporter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/report_generator/exporters/PDFExporter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/report_generator/reports/Report.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/report_generator/reports/TaskPriorityReport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/report_generator/reports/generator/ReportGenerator.java" afterDir="false" />
+    <list default="true" id="95c63071-51f5-4b0c-a065-c28cbacfd77f" name="Changes" comment="Implement library management and refactored for better SOLID ,cc and oops design">
+      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/serializer/Serializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/serializer/impl/SerializeBookCSV.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/utilities/StringUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/utilities/impl/SimpleStringUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Design.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Design.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/entities/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/BookCreatorFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/BookCreatorFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/BookManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/BookManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/bookfilter/BookFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/bookfilter/BookFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/bookfilter/BookFilterByTitle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/bookfilter/BookFilterByTitle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/persistence/FilePersistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/persistence/FilePersistence.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/BookRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/Repository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/SimpleBookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/SimpleBookRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/FileService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/SimpleBookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/SimpleBookService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -267,7 +250,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732775329227</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Implement library management and refactored for better SOLID ,cc and oops design">
+      <option name="closed" value="true" />
+      <created>1733473976136</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1733473976136</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -280,7 +271,8 @@
     <MESSAGE value="Functions Clean code" />
     <MESSAGE value="Solving user signup with cc,solid,oops and design patterns" />
     <MESSAGE value="Implement library management" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement library management" />
+    <MESSAGE value="Implement library management and refactored for better SOLID ,cc and oops design" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement library management and refactored for better SOLID ,cc and oops design" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -297,7 +289,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/persistence/FilePersistence.java</url>
-          <line>39</line>
+          <line>46</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>

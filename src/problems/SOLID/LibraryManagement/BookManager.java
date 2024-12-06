@@ -4,16 +4,19 @@ import problems.SOLID.LibraryManagement.bookfilter.BookFilterByTitle;
 import problems.SOLID.LibraryManagement.bookfilter.BookFilterFactory;
 import problems.SOLID.LibraryManagement.bookfilter.FilterCriteriaBuilder;
 import problems.SOLID.LibraryManagement.bookfilter.SimpleFilterCriteriaBuilder;
+import problems.SOLID.LibraryManagement.entities.Book;
 import problems.SOLID.LibraryManagement.persistence.FilePersistence;
 import problems.SOLID.LibraryManagement.repositories.BookRepository;
 import problems.SOLID.LibraryManagement.repositories.SimpleBookRepository;
+import problems.SOLID.LibraryManagement.serializer.Serializer;
+import problems.SOLID.LibraryManagement.serializer.impl.SerializeBookCSV;
 import problems.SOLID.LibraryManagement.service.BookService;
 import problems.SOLID.LibraryManagement.service.FileManager;
 import problems.SOLID.LibraryManagement.service.SimpleBookService;
 import problems.SOLID.LibraryManagement.service.SimpleFileManager;
+import problems.SOLID.LibraryManagement.utilities.impl.SimpleStringUtils;
 
 import java.io.*;
-import java.util.Scanner;
 
 
 public class BookManager {
@@ -57,7 +60,8 @@ public class BookManager {
     }
     public static void main(String[] args) throws IOException,FileNotFoundException {
         FileManager fileManagermanager = new SimpleFileManager();
-        FilePersistence filePersistence = new FilePersistence(fileManagermanager);
+        Serializer<Book> bookSerializer = new SerializeBookCSV(new SimpleStringUtils());
+        FilePersistence filePersistence = new FilePersistence("books.txt",fileManagermanager,bookSerializer);
         BookRepository bookRepository = new SimpleBookRepository(filePersistence);
         BookService bookService = new SimpleBookService(bookRepository);
         BookManager bookManager = new BookManager(bookService);
