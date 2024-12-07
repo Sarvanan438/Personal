@@ -1,8 +1,10 @@
 package problems.SOLID.LibraryManagement.service;
 
+import problems.SOLID.LibraryManagement.dto.BookDTO;
 import problems.SOLID.LibraryManagement.entities.Book;
 import problems.SOLID.LibraryManagement.bookfilter.FilterCriteria;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**
@@ -10,7 +12,7 @@ import java.io.IOException;
  */
 public interface BookService {
     // we will use Book object as input as the service will only add book i.e persist
-    void add(Book book) throws IOException;
+    Book add(BookDTO bookDTO) throws IOException;
 
     // find a book
     /**
@@ -30,5 +32,5 @@ public interface BookService {
      * we can even use a builder to build the class
      */
 
-    Book[] filterBy(FilterCriteria filterCriteria);
+    Book[] filterBy(FilterCriteria filterCriteria) throws FileNotFoundException;
 }

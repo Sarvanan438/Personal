@@ -1,4 +1,7 @@
-package problems.SOLID.LibraryManagement.service;
+package problems.SOLID.LibraryManagement.service.impl;
+
+import problems.SOLID.LibraryManagement.service.FileManager;
+import problems.SOLID.LibraryManagement.service.FileService;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -6,13 +9,13 @@ import java.io.IOException;
 
 public class SimpleFileManager implements FileManager {
     @Override
-    public FileService createFile(String filename) throws IOException {
+    public File createFile(String filename) throws IOException {
         File file = new File(filename);
         if(!file.exists())
         {
             if(!file.createNewFile()) throw new FileNotFoundException();
         }
-        return new SimpleFileService(file);
+       return file;
     }
 
     @Override

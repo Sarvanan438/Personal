@@ -8,6 +8,7 @@ import problems.SOLID.LibraryManagement.bookfilter.FilterCriteria;
 import problems.SOLID.LibraryManagement.persistence.Persistence;
 import problems.SOLID.LibraryManagement.serializer.Serializer;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -36,7 +37,7 @@ public class SimpleBookRepository implements BookRepository {
         return this.bookSerializer.serialize(book);
     }
     @Override
-    public Book[] findBy(FilterCriteria filterCriteria) {
+    public Book[] findBy(FilterCriteria filterCriteria) throws FileNotFoundException {
 //          Contract change and first iteration
 //        Book[] books =this.filePersistence.findAll();
         String[] bookEntries = this.filePersistence.findAll();

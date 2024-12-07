@@ -4,9 +4,14 @@ import problems.SOLID.LibraryManagement.entities.Book;
 import problems.SOLID.LibraryManagement.serializer.Serializer;
 import problems.SOLID.LibraryManagement.service.FileManager;
 import problems.SOLID.LibraryManagement.service.FileService;
+import problems.SOLID.LibraryManagement.utilities.FileReader;
+import problems.SOLID.LibraryManagement.utilities.FileWriter;
 
+
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -25,11 +30,14 @@ import java.util.ArrayList;
 public class FilePersistence implements Persistence {
 
 
+    private FileWriter writer;
+    private  FileReader reader;
 
-    private FileService fileService;
 
-    public FilePersistence(FileService fileService) {
-        this.fileService = fileService;
+    public FilePersistence(FileWriter writer, FileReader reader) {
+        this.writer=writer;
+        this.reader=reader;
+
     }
 
     /** Iteration 1
@@ -63,22 +71,24 @@ public class FilePersistence implements Persistence {
 
     @Override
     public void insert(String item) throws IOException {
-        this.fileService.write(item);
-        this.fileService.write("\n");
+       this.writer.write(item);
+
     }
 
     @Override
-    public String[] findAll() {
+    public String[] findAll() throws FileNotFoundException {
         ArrayList<String> entities = new ArrayList<>();
-        while(this.fileService.hasLine()){
-            String line = this.fileService.readLine();
-
+        this.reader.open();
+        while(this.reader.hasLine()){
+            String line = this.reader.readLine();
+            entities.add(line);
         }
+        this.reader.close();
         return entities.toArray(new String[]{});
     }
 
     @Override
     public void clearAll() throws IOException {
-
+        this.writer.clearFileContent();
     }
 }
