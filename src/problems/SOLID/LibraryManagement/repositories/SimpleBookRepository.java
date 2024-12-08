@@ -1,5 +1,6 @@
 package problems.SOLID.LibraryManagement.repositories;
 
+import problems.SOLID.LibraryManagement.bookfilter.FilterLogic;
 import problems.SOLID.LibraryManagement.entities.Book;
 import problems.SOLID.LibraryManagement.FilterKey;
 import problems.SOLID.LibraryManagement.bookfilter.BookFilter;
@@ -7,6 +8,8 @@ import problems.SOLID.LibraryManagement.bookfilter.BookFilterFactory;
 import problems.SOLID.LibraryManagement.bookfilter.FilterCriteria;
 import problems.SOLID.LibraryManagement.persistence.Persistence;
 import problems.SOLID.LibraryManagement.serializer.Serializer;
+import problems.SOLID.LibraryManagement.strategies.BookFilterStrategyFactory;
+import problems.SOLID.LibraryManagement.strategies.FilterStrategy;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -36,19 +39,44 @@ public class SimpleBookRepository implements BookRepository {
     private String serializeBook(Book book){
         return this.bookSerializer.serialize(book);
     }
+    private Book[] getAllBooks() throws FileNotFoundException {
+        String[] bookEntries = this.filePersistence.findAll();
+        Book[] books = Arrays.stream(bookEntries).map(entry->this.bookSerializer.deserialize(entry)).toList().toArray(new Book[]{});
+        return books;
+    }
     @Override
     public Book[] findBy(FilterCriteria filterCriteria) throws FileNotFoundException {
 //          Contract change and first iteration
 //        Book[] books =this.filePersistence.findAll();
-        String[] bookEntries = this.filePersistence.findAll();
-        Book[] books = Arrays.stream(bookEntries).map(entry->this.bookSerializer.deserialize(entry)).toList().toArray(new Book[]{});
-        for(FilterKey key: filterCriteria.getFilters().keySet()) {
-            BookFilter filter = BookFilterFactory.createBookFilter(key);
-            books=filter.find(new ArrayList<>(List.of(books)),filterCriteria.getFilters().get(key));
-        }
-        return books;
+        /**
+         * According to CC and SRP a code unit should be responsbile for one thing
+         * here the function should be respsonbile for filtering books by the filter passed
+         * So getting the books and converting to domain entity is not part of this unit but
+         * specialized unit getAllBooks as converting to domain entity is resposibility of repo
+         */
+
+        Book[] books = getAllBooks();
+        BookFilter filter = BookFilterFactory.createBookFilter(FilterKey.COMPOSITE);
+        FilterLogic logic = filter.createFilter(filterCriteria);
+        return this.filterBooks(logic,books);
+
     }
 
+    private Book[] filterBooks(FilterLogic logic, Book[] books){
+        Book[] filteredBooks =books;
+        FilterLogic currentFilterLogic = logic;
+        while (currentFilterLogic !=null){
+            filteredBooks = this.applyFilterLogic(currentFilterLogic,books);
+            currentFilterLogic = currentFilterLogic.nextFilterLogic();
+        }
+        return filteredBooks;
+    }
+
+    private Book[] applyFilterLogic(FilterLogic logic,Book[] books){
+        FilterStrategy<Book> filterStrategy = new BookFilterStrategyFactory().createFilterStrategy(logic);
+        return  filterStrategy.applyFilter(logic,books).toArray(new Book[]{});
+
+    }
     @Override
     public void add(Book book) throws IOException {
         this.filePersistence.insert(this.serializeBook(book));

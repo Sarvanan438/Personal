@@ -2,8 +2,10 @@ package problems.SOLID.LibraryManagement;
 
 import problems.SOLID.LibraryManagement.book_manager.BookManager;
 import problems.SOLID.LibraryManagement.book_manager.SimpleBookManager;
+import problems.SOLID.LibraryManagement.bookfilter.BookFilter;
 import problems.SOLID.LibraryManagement.bookfilter.BookFilterByTitle;
 import problems.SOLID.LibraryManagement.bookfilter.BookFilterFactory;
+import problems.SOLID.LibraryManagement.bookfilter.CompositeFilter;
 import problems.SOLID.LibraryManagement.entities.Book;
 import problems.SOLID.LibraryManagement.factories.fileservice.FileServiceFactory;
 import problems.SOLID.LibraryManagement.factories.fileservice.SimpleFileServiceFactory;
@@ -30,6 +32,7 @@ public class LibraryManagement {
 	}
 	public static void setupBookFilters(){
 		BookFilterFactory.registerBookFilter(FilterKey.TITLE,new BookFilterByTitle());
+		BookFilterFactory.registerBookFilter(FilterKey.COMPOSITE,new CompositeFilter());
 	}
 	public static void printBooks(Book[] books){
 		for(Book book:books){
@@ -57,7 +60,7 @@ public class LibraryManagement {
 		bookManager.addBook("Transformers2","MartinBay","12321B1231BB");
 		bookManager.addBook("Transformers3","MartinBay","12321B1231BB");
 
-		book= bookManager.findBooksByTitle("Transformers");
+		book= bookManager.findBooksByTitle("Transformers2");
 		printBooks(book);
 	}
 }

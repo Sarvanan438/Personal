@@ -5,30 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95c63071-51f5-4b0c-a065-c28cbacfd77f" name="Changes" comment="Refactoring lib management">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/LibraryManagement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/book_manager/BookManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/dto/BookDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/factories/fileservice/FileServiceFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/factories/fileservice/SimpleFileServiceFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/utilities/FileReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/utilities/FileWriter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/utilities/impl/SimpleFileReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/utilities/impl/SimpleFileWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/Conditions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/bookfilter/CompositeFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/bookfilter/FilterLogic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/strategies/BookContainsFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/strategies/BookFilterStrategyFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/strategies/ContainsFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/strategies/ContainsFilterStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/strategies/FilterStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/BookCreatorFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/factories/book/BookCreatorFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/BookManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/book_manager/SimpleBookManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/persistence/FilePersistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/persistence/FilePersistence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/persistence/Persistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/persistence/Persistence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/BookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/FilterKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/FilterKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/LibraryManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/LibraryManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/bookfilter/BookFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/bookfilter/BookFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/bookfilter/BookFilterByTitle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/bookfilter/BookFilterByTitle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/SimpleBookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/SimpleBookRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/FileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/FileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/SimpleBookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/impl/SimpleBookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/SimpleFileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/impl/SimpleFileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/SimpleFileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/impl/SimpleFileService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +52,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.BookManager.executor": "Run",
-    "Application.LibraryManagement.executor": "Debug",
+    "Application.LibraryManagement.executor": "Run",
     "Application.NotificationSystem.executor": "Run",
     "Application.PDFExporter.executor": "Run",
     "Application.PaymentSystemSimulator.executor": "Run",
@@ -86,11 +76,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="problems.SOLID.LibraryManagement.strategies" />
+      <recent name="problems.SOLID.LibraryManagement.bookfilter" />
       <recent name="problems.SOLID.LibraryManagement.service" />
       <recent name="problems.report_generator.charts.saver" />
       <recent name="problems.report_generator.charts" />
-      <recent name="problems.SOLID.LibraryManagement" />
-      <recent name="DesignPatterns.behavioral.media.state" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/clean_code" />
@@ -285,7 +275,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733509955623</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Refactoring lib management">
+      <option name="closed" value="true" />
+      <created>1733599404127</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1733599404127</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -301,26 +299,5 @@
     <MESSAGE value="Implement library management and refactored for better SOLID ,cc and oops design" />
     <MESSAGE value="Refactoring lib management" />
     <option name="LAST_COMMIT_MESSAGE" value="Refactoring lib management" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/SimpleBookRepository.java</url>
-          <line>44</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/bookfilter/BookFilterByTitle.java</url>
-          <line>12</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/SimpleBookRepository.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

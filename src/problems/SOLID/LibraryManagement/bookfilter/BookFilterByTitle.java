@@ -1,5 +1,7 @@
 package problems.SOLID.LibraryManagement.bookfilter;
 
+import problems.SOLID.LibraryManagement.Conditions;
+import problems.SOLID.LibraryManagement.FilterKey;
 import problems.SOLID.LibraryManagement.entities.Book;
 
 import java.util.ArrayList;
@@ -9,11 +11,10 @@ import java.util.List;
 public class BookFilterByTitle implements BookFilter{
 
     @Override
-    public Book[] find(List<Book> books, String pattern) {
-        ArrayList<Book>filteredBooks = new ArrayList<>();
-        for(Book book:books){
-            if(book.getTitle().contains(pattern)) filteredBooks.add(book);
-        }
-        return filteredBooks.toArray(new Book[]{});
+    public FilterLogic createFilter( FilterCriteria filterCriteria) throws IllegalArgumentException{
+        String filterPattern = filterCriteria.getFilters().get(FilterKey.TITLE);
+        if( filterPattern==null)
+            throw new IllegalArgumentException("No filter speicified for title");
+        return new FilterLogic("title", Conditions.CONTAINS,filterPattern);
     }
 }

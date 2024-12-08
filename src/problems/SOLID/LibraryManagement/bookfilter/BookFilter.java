@@ -13,5 +13,16 @@ import java.util.List;
  * Because we can just use bookfilter to create a filterCriteria which the repository can handle
  */
 public interface BookFilter {
-    Book[] find(List<Book> books, String pattern);
+    /**
+     * Moving to FilterCriteria as input
+     * as book filter isn't just about creating filter on just a pattern
+     * it may be data ranges or anthing of that type
+     * filterCriteria is basically a dto to carry the filter condition which will be translated into the
+     * filter logic based on the condition which the data access can understand
+     *
+     * FilterLogic will be returned to the caller as FilterLogic will be a simplified encapsulation
+     * The creates an abstraction on how queries can be translated
+     * The repository/caller is responsible for translating these commands into queries the data source understands
+     */
+    FilterLogic createFilter(FilterCriteria filterCriteria) throws IllegalArgumentException;
 }
