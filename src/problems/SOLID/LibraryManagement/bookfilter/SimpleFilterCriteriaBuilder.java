@@ -4,6 +4,7 @@ import problems.SOLID.LibraryManagement.FilterKey;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.locks.Condition;
 
 public class SimpleFilterCriteriaBuilder implements FilterCriteriaBuilder{
     private final Map<FilterKey, String> filters = new HashMap<>();
@@ -18,6 +19,13 @@ public class SimpleFilterCriteriaBuilder implements FilterCriteriaBuilder{
         }
         return new FilterCriteria(filters,this.isCaseSensitive);
     }
+
+    @Override
+    public FilterCriteriaBuilder addFilter(FilterKey key,  String pattern) {
+        this.filters.put(key,pattern);
+        return this;
+    }
+
     @Override
     public FilterCriteriaBuilder addFilterByTitle(String title) {
         if (title == null || title.isEmpty()) {

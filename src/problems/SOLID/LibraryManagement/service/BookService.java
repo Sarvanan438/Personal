@@ -1,5 +1,6 @@
 package problems.SOLID.LibraryManagement.service;
 
+import problems.SOLID.LibraryManagement.dto.Availability;
 import problems.SOLID.LibraryManagement.dto.BookDTO;
 import problems.SOLID.LibraryManagement.entities.Book;
 import problems.SOLID.LibraryManagement.bookfilter.FilterCriteria;
@@ -33,4 +34,7 @@ public interface BookService {
      */
 
     Book[] filterBy(FilterCriteria filterCriteria) throws FileNotFoundException;
+    Book getBookById(String id);
+    Availability getBooksAvailability(String title) throws FileNotFoundException;
+    Book[] getAvailableBookByTitle(String title);
 }

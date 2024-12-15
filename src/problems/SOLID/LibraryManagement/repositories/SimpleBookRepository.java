@@ -6,6 +6,7 @@ import problems.SOLID.LibraryManagement.FilterKey;
 import problems.SOLID.LibraryManagement.bookfilter.BookFilter;
 import problems.SOLID.LibraryManagement.bookfilter.BookFilterFactory;
 import problems.SOLID.LibraryManagement.bookfilter.FilterCriteria;
+import problems.SOLID.LibraryManagement.entities.Id;
 import problems.SOLID.LibraryManagement.persistence.Persistence;
 import problems.SOLID.LibraryManagement.serializer.Serializer;
 import problems.SOLID.LibraryManagement.strategies.BookFilterStrategyFactory;
@@ -13,9 +14,7 @@ import problems.SOLID.LibraryManagement.strategies.FilterStrategy;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * The respository is responsible for working with the persistence layer to
@@ -78,7 +77,23 @@ public class SimpleBookRepository implements BookRepository {
 
     }
     @Override
-    public void add(Book book) throws IOException {
+    public Book add(Book book) throws IOException {
         this.filePersistence.insert(this.serializeBook(book));
+        return book;
+    }
+
+    @Override
+    public Book findById(Id id) {
+        try {
+          Book[] books = this.getAllBooks();
+          for(Book book:books)
+          {
+              if(book.isEqual(id)) return book;
+          }
+        }catch (Exception e){
+
+        }
+        return null;
+
     }
 }

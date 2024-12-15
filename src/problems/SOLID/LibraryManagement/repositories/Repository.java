@@ -1,5 +1,7 @@
 package problems.SOLID.LibraryManagement.repositories;
 
+import problems.SOLID.LibraryManagement.entities.Id;
+
 import java.io.IOException;
 
 /**
@@ -10,6 +12,6 @@ import java.io.IOException;
  */
 public interface Repository <T>{
 
-    void add(T item) throws IOException;
-
+    T add(T item) throws IOException;
+    T findById(Id id);
 }

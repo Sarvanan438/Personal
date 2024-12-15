@@ -5,10 +5,11 @@ import java.util.Arrays;
 /**
  * This object will be responsible for serializing and deserializing in addition to object properties accessor
  */
-public class Book{
+public class Book implements Id{
     String author,title,ISBN;
-
-    public Book(String author, String title, String ISBN) {
+    Id id;
+    public Book(Id id,String author, String title, String ISBN) {
+        this.id=id;
         this.author = author;
         this.title = title;
         this.ISBN = ISBN;
@@ -40,9 +41,23 @@ public class Book{
 
     @Override
     public String toString() {
-        return STR."author=\{author}, title=\{title}, ISBN=\{ISBN}\n";
+        return STR."id=\{this.id.getId()}, author=\{author}, title=\{title}, ISBN=\{ISBN}\n";
     }
 
 
+    @Override
+    public String getId() {
+        return this.id.getId();
+    }
+
+    @Override
+    public void setId(String id) {
+         this.id.setId(id);
+    }
+
+    @Override
+    public boolean isEqual(Id id) {
+        return this.id.isEqual(id);
+    }
 }
 

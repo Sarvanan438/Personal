@@ -2,58 +2,100 @@ package problems.SOLID.LibraryManagement;
 
 import problems.SOLID.LibraryManagement.book_manager.BookManager;
 import problems.SOLID.LibraryManagement.book_manager.SimpleBookManager;
-import problems.SOLID.LibraryManagement.bookfilter.BookFilter;
-import problems.SOLID.LibraryManagement.bookfilter.BookFilterByTitle;
-import problems.SOLID.LibraryManagement.bookfilter.BookFilterFactory;
-import problems.SOLID.LibraryManagement.bookfilter.CompositeFilter;
+import problems.SOLID.LibraryManagement.bookfilter.*;
+import problems.SOLID.LibraryManagement.dto.Availability;
 import problems.SOLID.LibraryManagement.entities.Book;
+import problems.SOLID.LibraryManagement.entities.Borrow;
+import problems.SOLID.LibraryManagement.entities.User;
 import problems.SOLID.LibraryManagement.factories.fileservice.FileServiceFactory;
 import problems.SOLID.LibraryManagement.factories.fileservice.SimpleFileServiceFactory;
+import problems.SOLID.LibraryManagement.factories.id.StringIdFactory;
 import problems.SOLID.LibraryManagement.persistence.FilePersistence;
-import problems.SOLID.LibraryManagement.repositories.BookRepository;
-import problems.SOLID.LibraryManagement.repositories.SimpleBookRepository;
+import problems.SOLID.LibraryManagement.repositories.*;
 import problems.SOLID.LibraryManagement.serializer.Serializer;
 import problems.SOLID.LibraryManagement.serializer.impl.SerializeBookCSV;
+import problems.SOLID.LibraryManagement.serializer.impl.SerializeBorrowCSV;
+import problems.SOLID.LibraryManagement.serializer.impl.SerializeUserCSV;
 import problems.SOLID.LibraryManagement.service.*;
 import problems.SOLID.LibraryManagement.service.impl.SimpleBookService;
+import problems.SOLID.LibraryManagement.service.impl.SimpleBorrowService;
 import problems.SOLID.LibraryManagement.service.impl.SimpleFileManager;
+import problems.SOLID.LibraryManagement.service.impl.SimpleUserService;
+import problems.SOLID.LibraryManagement.user_manager.SimpleUserManager;
+import problems.SOLID.LibraryManagement.user_manager.UserManager;
 import problems.SOLID.LibraryManagement.utilities.FileReader;
 import problems.SOLID.LibraryManagement.utilities.FileWriter;
 import problems.SOLID.LibraryManagement.utilities.impl.SimpleFileReader;
 import problems.SOLID.LibraryManagement.utilities.impl.SimpleFileWriter;
 import problems.SOLID.LibraryManagement.utilities.impl.SimpleStringUtils;
+import problems.SOLID.LibraryManagement.utilities.impl.UUIDUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 public class LibraryManagement {
 	public static void  setUpFileDb(FilePersistence persistence) throws IOException {
 		persistence.clearAll();;
 	}
 	public static void setupBookFilters(){
-		BookFilterFactory.registerBookFilter(FilterKey.TITLE,new BookFilterByTitle());
+		BookFilterFactory.registerBookFilter(FilterKey.TITLE,new BookFilterByTitle(FilterKey.TITLE,Conditions.CONTAINS));
 		BookFilterFactory.registerBookFilter(FilterKey.COMPOSITE,new CompositeFilter());
+		BookFilterFactory.registerBookFilter(FilterKey.TITLE_EQUALS, new BookFilterByTitle(FilterKey.TITLE_EQUALS,Conditions.EQUAL));
 	}
 	public static void printBooks(Book[] books){
 		for(Book book:books){
 			System.out.println(book);
 		}
 	}
-	public static void main(String[] args) throws IOException {
+	public static void setupUtils(){
+		UUIDUtils.setIdFactory(new StringIdFactory());
+	}
+
+	public static FilePersistence generatePersistence(String filename) throws IOException {
 		FileManager fileManager = new SimpleFileManager();
-		Serializer<Book> bookSerializer = new SerializeBookCSV(new SimpleStringUtils());
-		File file = fileManager.createFile("books.txt");
+		File file = fileManager.createFile(filename);
 		FileWriter writer =  new SimpleFileWriter(file);
 		FileReader reader = new SimpleFileReader(file);
 		FilePersistence filePersistence = new FilePersistence(writer,reader);
-		BookRepository bookRepository = new SimpleBookRepository(filePersistence,bookSerializer);
-		BookService bookService = new SimpleBookService(bookRepository);
-		BookManager bookManager = new SimpleBookManager(bookService);
+		return filePersistence;
+	}
+	public static void setupUsers(UserManager manager) throws IOException {
+		manager.createUser("John");
+		manager.createUser("John Doe");
+		manager.createUser("Terminator");
+
+	}
+	public static void printUser(User user){
+		System.out.println(user.toString());
+	}
+	public static void main(String[] args) throws Exception {
+
+		Serializer<Book> bookSerializer = new SerializeBookCSV(new SimpleStringUtils());
+		SerializeBorrowCSV borrowSerializer = new SerializeBorrowCSV(new SimpleStringUtils(),new StringIdFactory());
+		FilePersistence borrowPersistence = generatePersistence("borrow.txt");
+		BorrowRepository borrowRepository = new SimpleBorrowRepository(borrowPersistence,borrowSerializer);
+		FilePersistence bookFilePersistence = generatePersistence("books.txt");
+		BookRepository bookRepository = new SimpleBookRepository(bookFilePersistence,bookSerializer);
+		BorrowService borrowService = new SimpleBorrowService(borrowRepository);
+		BookService bookService = new SimpleBookService(bookRepository,new SimpleFilterCriteriaBuilder(),borrowRepository,new StringIdFactory());
+		BookManager bookManager = new SimpleBookManager(bookService,borrowService);
+		Serializer<User> userSerializer = new SerializeUserCSV(new SimpleStringUtils(),new StringIdFactory());
+		FilePersistence userFilePersistence =generatePersistence("users.txt");
+		UserRepository userRepository = new SimpleUserRepository(userFilePersistence,userSerializer);
+		UserService userService = new SimpleUserService(userRepository,new StringIdFactory());
+		UserManager userManager =  new SimpleUserManager(userService);
 
 		// setup
-		setUpFileDb(filePersistence);
+		setupUtils();
+		setUpFileDb(bookFilePersistence);
+		setUpFileDb(userFilePersistence);
 		setupBookFilters();
-
+		setupUsers(userManager);
+		bookManager.addBook("Transformers","MartinBay","12321B1231BB");
 		bookManager.addBook("Transformers","MartinBay","12321B1231BB");
 		Book[] book= bookManager.findBooksByTitle("Transformers");
 		printBooks(book);
@@ -62,5 +104,34 @@ public class LibraryManagement {
 
 		book= bookManager.findBooksByTitle("Transformers2");
 		printBooks(book);
+		printUser(userManager.getUserByName("John"));
+		Availability availability=bookManager.getBookAvailabilityByTitle("Transformers");
+
+		System.out.println(STR."\{availability.getBook()} \{availability.getAvailableCopies()}");
+		User john  =  userManager.getUserByName("John");
+		Book[] availableBooksByTitle=bookManager.getAvailableBooksByTitle("Transformers");
+		Book borrowingBook = availableBooksByTitle[0];
+		Borrow borrow=bookManager.borrowBook(john,borrowingBook);
+
+		System.out.println(borrow);
+		borrow=borrowService.getActiveBorrowByBook(availableBooksByTitle[0]);
+		System.out.println("Getting active borrow "+borrow);
+		availableBooksByTitle = bookManager.getAvailableBooksByTitle("Transformers");
+		printBooks(availableBooksByTitle);
+		Borrow[] borrows = borrowService.getActiveBorrowByUser(john);
+		System.out.println("Active borrows for user " +borrows[0]);
+		borrow = bookManager.returnBook(borrowingBook);
+		System.out.println("Returned book "+borrow);
+
+
+
+
+		borrow=borrowService.getActiveBorrowByBook(availableBooksByTitle[0]);
+		System.out.println("Getting active borrow "+borrow);
+		availableBooksByTitle = bookManager.getAvailableBooksByTitle("Transformers");
+		printBooks(availableBooksByTitle);
+		 borrows = borrowService.getActiveBorrowByUser(john);
+		System.out.println("Active borrows for user " +borrows.length);
+
 	}
 }

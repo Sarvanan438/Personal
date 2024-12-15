@@ -5,8 +5,11 @@ import problems.SOLID.LibraryManagement.bookfilter.BookFilterByTitle;
 import problems.SOLID.LibraryManagement.bookfilter.BookFilterFactory;
 import problems.SOLID.LibraryManagement.bookfilter.FilterCriteriaBuilder;
 import problems.SOLID.LibraryManagement.bookfilter.SimpleFilterCriteriaBuilder;
+import problems.SOLID.LibraryManagement.dto.Availability;
 import problems.SOLID.LibraryManagement.dto.BookDTO;
 import problems.SOLID.LibraryManagement.entities.Book;
+import problems.SOLID.LibraryManagement.entities.Borrow;
+import problems.SOLID.LibraryManagement.entities.User;
 import problems.SOLID.LibraryManagement.factories.book.BookCreatorFactory;
 import problems.SOLID.LibraryManagement.persistence.FilePersistence;
 import problems.SOLID.LibraryManagement.service.*;
@@ -23,9 +26,10 @@ import java.io.*;
  */
 public class SimpleBookManager implements  BookManager{
     private BookService bookService ;
-
-    public SimpleBookManager(BookService bookService) {
+    private BorrowService borrowService;
+    public SimpleBookManager(BookService bookService,BorrowService borrowService) {
         this.bookService = bookService;
+        this.borrowService=borrowService;
     }
 
     public Book addBook(String title, String author, String ISBN) throws IOException{
@@ -48,6 +52,32 @@ public class SimpleBookManager implements  BookManager{
                 .addFilterByTitle(title);
         return this.bookService.filterBy(filterCriteriaBuilder.getFilterCriteria());
 
+    }
+
+    @Override
+    public Availability getBookAvailabilityByTitle(String title) {
+	    try {
+		    Availability availability = this.bookService.getBooksAvailability(title);
+            return availability;
+	    } catch (FileNotFoundException e) {
+            e.printStackTrace();
+	    }
+        return null;
+    }
+
+    @Override
+    public Borrow borrowBook(User user, Book book) throws Exception {
+        return this.borrowService.borrowBook(user,book);
+    }
+
+    @Override
+    public Borrow returnBook(Book book) throws Exception {
+        return this.borrowService.returnBook(book);
+    }
+
+    @Override
+    public Book[] getAvailableBooksByTitle(String title) {
+        return this.bookService.getAvailableBookByTitle(title);
     }
 
 

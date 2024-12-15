@@ -1,7 +1,10 @@
 package problems.SOLID.LibraryManagement.book_manager;
 
+import problems.SOLID.LibraryManagement.dto.Availability;
 import problems.SOLID.LibraryManagement.dto.BookDTO;
 import problems.SOLID.LibraryManagement.entities.Book;
+import problems.SOLID.LibraryManagement.entities.Borrow;
+import problems.SOLID.LibraryManagement.entities.User;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -29,4 +32,8 @@ import java.io.IOException;
 public interface BookManager {
 	Book addBook(String title,String author, String ISBN) throws IOException;
 	Book[] findBooksByTitle(String title) throws FileNotFoundException;
+	Availability getBookAvailabilityByTitle(String title);
+	Borrow borrowBook(User user ,Book book) throws Exception;
+	Borrow returnBook(Book book) throws Exception;
+	Book[] getAvailableBooksByTitle(String title);
 }
