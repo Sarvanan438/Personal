@@ -13,6 +13,7 @@ import problems.SOLID.LibraryManagement.factories.borrow.BorrowFactory;
 import problems.SOLID.LibraryManagement.factories.id.IdFactory;
 import problems.SOLID.LibraryManagement.repositories.BookRepository;
 import problems.SOLID.LibraryManagement.repositories.BorrowRepository;
+import problems.SOLID.LibraryManagement.service.AvailabilityService;
 import problems.SOLID.LibraryManagement.service.BookService;
 
 import java.io.FileNotFoundException;
@@ -25,11 +26,13 @@ public class SimpleBookService implements BookService {
     private BookRepository bookRepository;
     private  FilterCriteriaBuilder filterCriteriaBuilder;
     private BorrowRepository borrowRepository;
-    public SimpleBookService(BookRepository bookRepository, FilterCriteriaBuilder filterCriteriaBuilder, BorrowRepository borrowRepository, IdFactory idFactory) {
+    private AvailabilityService availabilityService;
+    public SimpleBookService(BookRepository bookRepository, FilterCriteriaBuilder filterCriteriaBuilder, BorrowRepository borrowRepository, IdFactory idFactory, AvailabilityService availabilityService) {
         this.bookRepository = bookRepository;
         this.filterCriteriaBuilder=filterCriteriaBuilder;
         this.borrowRepository= borrowRepository;
         this.idFactory = idFactory;
+        this.availabilityService=availabilityService;
     }
 
     @Override
@@ -62,21 +65,15 @@ public class SimpleBookService implements BookService {
     }
     @Override
     public Availability getBooksAvailability(String title) throws FileNotFoundException {
-            Book[] books  =  this.findBookCopiesByTitle(title);
-            int availability=0;
-            for(Book book:books){
-                if(this.borrowRepository.findActiveBorrowByBook(book)==null){
-                    availability++;
-                }
-            }
-            return new Availability(books[0],availability);
+     return this.availabilityService.createAvailability(List.of(this.findBookCopiesByTitle(title)));
     }
+
     public Book[] getAvailableCopiesByTitle(String title) throws FileNotFoundException {
         Book[] books  =  this.findBookCopiesByTitle(title);
         List<Book> availableBookCopies = new ArrayList<>();
         for(Book book:books)
         {
-            if(this.borrowRepository.findActiveBorrowByBook(book)==null)
+            if(!book.isBorrowed())
                 availableBookCopies.add(book);
         }
         return availableBookCopies.toArray(new Book[]{});

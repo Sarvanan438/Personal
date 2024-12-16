@@ -4,49 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95c63071-51f5-4b0c-a065-c28cbacfd77f" name="Changes" comment="Refactored BookFilter.java to return filter logic&#10;and build filter strategy to filter results in memory">
-      <change afterPath="$PROJECT_DIR$/src/code_architecture/N-Layered.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/dto/Availability.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/dto/UserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/entities/Borrow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/entities/Id.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/entities/StringId.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/entities/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/factories/borrow/BorrowFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/factories/id/IdFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/factories/id/StringIdFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/factories/user/UserFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/BorrowRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/SimpleBorrowRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/SimpleUserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/serializer/impl/SerializeBorrowCSV.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/serializer/impl/SerializeUserCSV.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/BorrowService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/impl/SimpleBorrowService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/impl/SimpleUserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/strategies/EqualFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/user_manager/SimpleUserManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/user_manager/UserManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/utilities/impl/DateUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/utilities/impl/UUIDUtils.java" afterDir="false" />
+    <list default="true" id="95c63071-51f5-4b0c-a065-c28cbacfd77f" name="Changes" comment="Implemented Borrow and return book">
+      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/AvailabilityService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/impl/SimpleAvailabilityService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/FilterKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/FilterKey.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/LibraryManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/LibraryManagement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/book_manager/BookManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/book_manager/BookManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/book_manager/SimpleBookManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/book_manager/SimpleBookManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/bookfilter/BookFilterByTitle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/bookfilter/BookFilterByTitle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/bookfilter/FilterCriteriaBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/bookfilter/FilterCriteriaBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/bookfilter/SimpleFilterCriteriaBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/bookfilter/SimpleFilterCriteriaBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/dto/Availability.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/dto/Availability.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/entities/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/entities/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/factories/book/BookCreatorFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/factories/book/BookCreatorFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/Repository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/SimpleBookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/SimpleBookRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/serializer/impl/SerializeBookCSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/serializer/impl/SerializeBookCSV.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/BorrowService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/BorrowService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/impl/SimpleBookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/impl/SimpleBookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/strategies/BookFilterStrategyFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/strategies/BookFilterStrategyFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/impl/SimpleBorrowService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/impl/SimpleBorrowService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -319,7 +289,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733680544139</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Implemented Borrow and return book">
+      <option name="closed" value="true" />
+      <created>1734271657105</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1734271657105</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -335,14 +313,15 @@
     <MESSAGE value="Implement library management and refactored for better SOLID ,cc and oops design" />
     <MESSAGE value="Refactoring lib management" />
     <MESSAGE value="Refactored BookFilter.java to return filter logic&#10;and build filter strategy to filter results in memory" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored BookFilter.java to return filter logic&#10;and build filter strategy to filter results in memory" />
+    <MESSAGE value="Implemented Borrow and return book" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented Borrow and return book" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/impl/SimpleBorrowService.java</url>
-          <line>31</line>
+          <line>38</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>

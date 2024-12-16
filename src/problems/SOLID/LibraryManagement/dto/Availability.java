@@ -2,21 +2,23 @@ package problems.SOLID.LibraryManagement.dto;
 
 import problems.SOLID.LibraryManagement.entities.Book;
 
-public class Availability {
-	Book book;
-	private int availableCopies;
+import java.util.List;
 
-	public Availability(Book book, int availableCopies) {
-		this.book = book;
+public class Availability {
+
+
+	List<Book> availableCopies;
+
+	public Availability(List<Book> availableCopies) {
 		this.availableCopies = availableCopies;
 	}
 
 	public Book getBook() {
-		return book;
+		return availableCopies.size()>0 ?availableCopies.get(0):null;
 	}
 
 	public int getAvailableCopies() {
-		return availableCopies;
+		return availableCopies.size();
 	}
 
 	public boolean isCopyAvailable(){

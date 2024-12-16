@@ -5,8 +5,8 @@ import problems.SOLID.LibraryManagement.entities.Borrow;
 import problems.SOLID.LibraryManagement.entities.User;
 
 public interface BorrowService {
-	Borrow borrowBook(User user, Book book) throws Exception;
-	Borrow returnBook(Book book) throws Exception;
-	Borrow getActiveBorrowByBook(Book book);
-	Borrow[] getActiveBorrowByUser(User user);
+	Borrow borrowBook(String userId, String bookId) throws Exception;
+	Borrow returnBook(String bookId) throws Exception;
+	Borrow getActiveBorrowByBook(String bookId);
+	Borrow[] getActiveBorrowByUser(String userId);
 }

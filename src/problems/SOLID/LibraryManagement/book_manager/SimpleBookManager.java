@@ -1,17 +1,12 @@
 package problems.SOLID.LibraryManagement.book_manager;
 
-import problems.SOLID.LibraryManagement.FilterKey;
-import problems.SOLID.LibraryManagement.bookfilter.BookFilterByTitle;
-import problems.SOLID.LibraryManagement.bookfilter.BookFilterFactory;
 import problems.SOLID.LibraryManagement.bookfilter.FilterCriteriaBuilder;
 import problems.SOLID.LibraryManagement.bookfilter.SimpleFilterCriteriaBuilder;
 import problems.SOLID.LibraryManagement.dto.Availability;
 import problems.SOLID.LibraryManagement.dto.BookDTO;
 import problems.SOLID.LibraryManagement.entities.Book;
 import problems.SOLID.LibraryManagement.entities.Borrow;
-import problems.SOLID.LibraryManagement.entities.User;
 import problems.SOLID.LibraryManagement.factories.book.BookCreatorFactory;
-import problems.SOLID.LibraryManagement.persistence.FilePersistence;
 import problems.SOLID.LibraryManagement.service.*;
 
 import java.io.*;
@@ -47,6 +42,8 @@ public class SimpleBookManager implements  BookManager{
 //    }
 
     public Book[] findBooksByTitle(String title) throws FileNotFoundException {
+        // the manager shouldn't be aware of how to build the filterCriteria
+        // it should be dumb and let the bussiness logic like the service layer to handle building this filter
         FilterCriteriaBuilder  filterCriteriaBuilder=new SimpleFilterCriteriaBuilder()
                 .caseSensitive()
                 .addFilterByTitle(title);
@@ -66,13 +63,20 @@ public class SimpleBookManager implements  BookManager{
     }
 
     @Override
-    public Borrow borrowBook(User user, Book book) throws Exception {
-        return this.borrowService.borrowBook(user,book);
+    public Borrow borrowBook(String userId, String  bookId) throws Exception {
+        // replace with ids as the user and book object creation becomes job of manager
+        // also let the service layer handle this fetch as it can fetch updated entries
+        // the manger is basically a orchestrator at high level so should not know how the serviec layaer works
+        // having the Book and user object directly tightly couples and limit the evolvability of the service layer
+        // having ids is better as it is simple , light weight and let service layer handle the fetch logic
+        // this also lets each layer evolve independently on thier own , instead of tightly coupling
+        // this bloats the manager with responsiblity of validation ,checks etc and abstraction leak
+        return this.borrowService.borrowBook(userId,bookId);
     }
 
     @Override
-    public Borrow returnBook(Book book) throws Exception {
-        return this.borrowService.returnBook(book);
+    public Borrow returnBook(String bookId) throws Exception {
+        return this.borrowService.returnBook(bookId);
     }
 
     @Override

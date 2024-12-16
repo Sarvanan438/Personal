@@ -6,6 +6,7 @@ import problems.SOLID.LibraryManagement.FilterKey;
 import problems.SOLID.LibraryManagement.bookfilter.BookFilter;
 import problems.SOLID.LibraryManagement.bookfilter.BookFilterFactory;
 import problems.SOLID.LibraryManagement.bookfilter.FilterCriteria;
+import problems.SOLID.LibraryManagement.entities.Borrow;
 import problems.SOLID.LibraryManagement.entities.Id;
 import problems.SOLID.LibraryManagement.persistence.Persistence;
 import problems.SOLID.LibraryManagement.serializer.Serializer;
@@ -30,17 +31,25 @@ import java.util.Arrays;
 public class SimpleBookRepository implements BookRepository {
     Persistence<Book> filePersistence ;
     Serializer<Book> bookSerializer;
-    public SimpleBookRepository(Persistence<Book> filePersistence,Serializer<Book> bookSerializer){
+    private BorrowRepository borrowRepository;
+    public SimpleBookRepository(Persistence<Book> filePersistence,Serializer<Book> bookSerializer,BorrowRepository borrowRepository){
         this.filePersistence=filePersistence;
         this.bookSerializer = bookSerializer;
+        this.borrowRepository = borrowRepository;
     }
-
+    private Book constructBook(String item){
+        Book book = this.bookSerializer.deserialize(item);
+        Borrow borrow=this.borrowRepository.findActiveBorrowByBook(book);
+        if(borrow !=null)
+        book.setBorrowId(borrow.getId());
+        return book;
+    }
     private String serializeBook(Book book){
         return this.bookSerializer.serialize(book);
     }
     private Book[] getAllBooks() throws FileNotFoundException {
         String[] bookEntries = this.filePersistence.findAll();
-        Book[] books = Arrays.stream(bookEntries).map(entry->this.bookSerializer.deserialize(entry)).toList().toArray(new Book[]{});
+        Book[] books = Arrays.stream(bookEntries).map(entry->constructBook(entry)).toList().toArray(new Book[]{});
         return books;
     }
     @Override
@@ -96,4 +105,6 @@ public class SimpleBookRepository implements BookRepository {
         return null;
 
     }
+
+
 }

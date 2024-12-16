@@ -8,6 +8,7 @@ import java.util.Arrays;
 public class Book implements Id{
     String author,title,ISBN;
     Id id;
+    String borrowId;
     public Book(Id id,String author, String title, String ISBN) {
         this.id=id;
         this.author = author;
@@ -58,6 +59,14 @@ public class Book implements Id{
     @Override
     public boolean isEqual(Id id) {
         return this.id.isEqual(id);
+    }
+
+    public void setBorrowId(String borrowId) {
+        this.borrowId = borrowId;
+    }
+
+    public boolean isBorrowed(){
+        return this.borrowId !=null;
     }
 }
 
