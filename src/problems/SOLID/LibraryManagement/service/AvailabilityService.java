@@ -6,5 +6,5 @@ import problems.SOLID.LibraryManagement.entities.Book;
 import java.util.List;
 
 public interface AvailabilityService {
-	Availability createAvailability(List<Book> books);
+	Availability createAvailability(String title) throws Exception;
 }

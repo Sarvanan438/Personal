@@ -64,50 +64,20 @@ public class SimpleBookService implements BookService {
         return books;
     }
     @Override
-    public Availability getBooksAvailability(String title) throws FileNotFoundException {
-     return this.availabilityService.createAvailability(List.of(this.findBookCopiesByTitle(title)));
+    public Availability getBooksAvailability(String title) throws Exception {
+     return this.availabilityService.createAvailability(title);
     }
 
-    public Book[] getAvailableCopiesByTitle(String title) throws FileNotFoundException {
-        Book[] books  =  this.findBookCopiesByTitle(title);
-        List<Book> availableBookCopies = new ArrayList<>();
-        for(Book book:books)
-        {
-            if(!book.isBorrowed())
-                availableBookCopies.add(book);
-        }
-        return availableBookCopies.toArray(new Book[]{});
-    }
     @Override
     public Book[] getAvailableBookByTitle(String title) {
-        Book[] availableBooks=new Book[]{};
-	    try {
-		    return this.getAvailableCopiesByTitle(title);
-	    } catch (FileNotFoundException e) {
+        try {
+            return this.getBooksAvailability(title).getAvailableBooks();
+        }catch (Exception e){
             e.printStackTrace();
-
-	    }
-return availableBooks;
-    }
-
-    public Book getAvailableBook(String title) throws FileNotFoundException {
-        Book[] books  =  this.findBookCopiesByTitle(title);
-        for(Book book:books){
-            if(this.borrowRepository.findActiveBorrowByBook(book)==null)
-                return book;
         }
-        return null;
-    }
-    public Borrow borrowBook(User user, String title) throws Exception {
-        Book availableCopy = this.getAvailableBook(title);
-        if(availableCopy==null) throw new Exception("No copies available");
-        return this.borrowRepository.add(BorrowFactory.createBorrow(user,availableCopy,15));
+        return new Book[]{};
     }
 
-    public Borrow returnBook(User user , Book book) throws IllegalAccessException, IOException {
-        Borrow borrow=this.borrowRepository.findActiveBorrowByBook(book);
-        borrow.returnBook();
-        this.borrowRepository.update(borrow);
-        return borrow;
-    }
+
+
 }

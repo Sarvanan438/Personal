@@ -35,6 +35,6 @@ public interface BookService {
 
     Book[] filterBy(FilterCriteria filterCriteria) throws FileNotFoundException;
     Book getBookById(String id);
-    Availability getBooksAvailability(String title) throws FileNotFoundException;
+    Availability getBooksAvailability(String title) throws Exception;
     Book[] getAvailableBookByTitle(String title);
 }

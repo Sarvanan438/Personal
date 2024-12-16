@@ -37,6 +37,7 @@ public class LibraryManagement {
 		BookFilterFactory.registerBookFilter(FilterKey.TITLE,new BookFilterByTitle(FilterKey.TITLE,Conditions.CONTAINS));
 		BookFilterFactory.registerBookFilter(FilterKey.COMPOSITE,new CompositeFilter());
 		BookFilterFactory.registerBookFilter(FilterKey.TITLE_EQUALS, new BookFilterByTitle(FilterKey.TITLE_EQUALS,Conditions.EQUAL));
+		BookFilterFactory.registerBookFilter(FilterKey.AVAILABILITY,new BookFilterByAvailability());
 	}
 	public static void printBooks(Book[] books){
 		for(Book book:books){
@@ -72,7 +73,8 @@ public class LibraryManagement {
 		BorrowRepository borrowRepository = new SimpleBorrowRepository(borrowPersistence,borrowSerializer);
 		FilePersistence bookFilePersistence = generatePersistence("books.txt");
 		BookRepository bookRepository = new SimpleBookRepository(bookFilePersistence,bookSerializer,borrowRepository);
-		BookService bookService = new SimpleBookService(bookRepository,new SimpleFilterCriteriaBuilder(),borrowRepository,new StringIdFactory(),new SimpleAvailabilityService());
+		AvailablilityRepository availablilityRepository = new SimpleAvailabilityRepository(bookRepository);
+		BookService bookService = new SimpleBookService(bookRepository,new SimpleFilterCriteriaBuilder(),borrowRepository,new StringIdFactory(),new SimpleAvailabilityService(availablilityRepository,new SimpleFilterCriteriaBuilder()));
 
 		Serializer<User> userSerializer = new SerializeUserCSV(new SimpleStringUtils(),new StringIdFactory());
 		FilePersistence userFilePersistence =generatePersistence("users.txt");

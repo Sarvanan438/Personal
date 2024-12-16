@@ -11,4 +11,5 @@ public interface FilterCriteriaBuilder {
     FilterCriteriaBuilder clear();
     FilterCriteria getFilterCriteria();
     FilterCriteriaBuilder addFilter(FilterKey key, String pattern);
+    FilterCriteriaBuilder addFilterByAvailability();
 }

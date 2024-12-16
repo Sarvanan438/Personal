@@ -56,7 +56,7 @@ public class SimpleBookManager implements  BookManager{
 	    try {
 		    Availability availability = this.bookService.getBooksAvailability(title);
             return availability;
-	    } catch (FileNotFoundException e) {
+	    } catch (Exception e) {
             e.printStackTrace();
 	    }
         return null;

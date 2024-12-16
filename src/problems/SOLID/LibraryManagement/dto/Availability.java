@@ -25,4 +25,8 @@ public class Availability {
 		return this.getAvailableCopies()>0;
 	}
 
+	public Book[] getAvailableBooks(){
+		return this.availableCopies.toArray(new Book[]{});
+	}
+
 }

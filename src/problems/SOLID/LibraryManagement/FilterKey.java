@@ -4,4 +4,5 @@ public enum FilterKey {
     TITLE,
     COMPOSITE,
     TITLE_EQUALS,
+    AVAILABILITY
 }

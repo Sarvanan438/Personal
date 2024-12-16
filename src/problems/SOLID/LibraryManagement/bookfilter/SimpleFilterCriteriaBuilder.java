@@ -27,6 +27,12 @@ public class SimpleFilterCriteriaBuilder implements FilterCriteriaBuilder{
     }
 
     @Override
+    public FilterCriteriaBuilder addFilterByAvailability() {
+         this.filters.put(FilterKey.AVAILABILITY,"true");
+         return this;
+    }
+
+    @Override
     public FilterCriteriaBuilder addFilterByTitle(String title) {
         if (title == null || title.isEmpty()) {
             throw new IllegalArgumentException("Title filter cannot be null or empty");
