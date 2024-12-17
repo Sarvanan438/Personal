@@ -4,10 +4,12 @@ import problems.SOLID.LibraryManagement.entities.Id;
 import problems.SOLID.LibraryManagement.entities.User;
 import problems.SOLID.LibraryManagement.persistence.Persistence;
 import problems.SOLID.LibraryManagement.serializer.Serializer;
+import problems.SOLID.LibraryManagement.utilities.impl.UUIDUtils;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.List;
 
 public class SimpleUserRepository implements UserRepository{
 	Persistence<User> filePersistence ;
@@ -34,19 +36,15 @@ public class SimpleUserRepository implements UserRepository{
 		return item;
 	}
 
-	@Override
-	public User findById(Id id) {
-		try{
-			User[] users = this.getAllUsers();
-			for(User user:users)
-			{
-				if(user.isEqual(id)) return user;
+		@Override
+		public User findById(Id id) {
+			try{
+				return (User)UUIDUtils.findIdMatch(List.of(this.getAllUsers()),id);
+			}catch (Exception e){
+				System.out.println("No user found for id: "+id.getId());
 			}
-		}catch (Exception e){
-			System.out.println("No user found for id: "+id.getId());
+			return null;
 		}
-		return null;
-	}
 
 	@Override
 	public User getUserByName(String name) {

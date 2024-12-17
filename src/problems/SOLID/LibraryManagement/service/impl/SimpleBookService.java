@@ -52,17 +52,9 @@ public class SimpleBookService implements BookService {
         return this.bookRepository.findById(this.idFactory.generateIdFromString(id));
     }
 
-    private FilterCriteria getTitleEqualFilterCriteria(String title){
-        return filterCriteriaBuilder.addFilter(FilterKey.TITLE_EQUALS,title)
-                .caseInsensitive()
-                .getFilterCriteria();
-    }
 
-    public Book[] findBookCopiesByTitle(String title) throws  FileNotFoundException{
-        FilterCriteria filterCriteria= this.getTitleEqualFilterCriteria(title);
-        Book[] books = this.bookRepository.findBy(filterCriteria);
-        return books;
-    }
+
+
     @Override
     public Availability getBooksAvailability(String title) throws Exception {
      return this.availabilityService.createAvailability(title);

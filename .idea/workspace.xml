@@ -4,19 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95c63071-51f5-4b0c-a065-c28cbacfd77f" name="Changes" comment="Implemented Borrow and return book">
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/bookfilter/BookFilterByAvailability.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/AvailablilityRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/SimpleAvailabilityRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/strategies/BookAvailabilityFilter.java" afterDir="false" />
+    <list default="true" id="95c63071-51f5-4b0c-a065-c28cbacfd77f" name="Changes" comment="Moving filter logic to repository as it aligns with the responsibility of repo to acess and filter data using datasource">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/FilterKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/FilterKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/bookfilter/FilterCriteriaBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/bookfilter/FilterCriteriaBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/bookfilter/SimpleFilterCriteriaBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/bookfilter/SimpleFilterCriteriaBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/dto/Availability.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/dto/Availability.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/AvailabilityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/AvailabilityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/impl/SimpleAvailabilityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/impl/SimpleAvailabilityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/SimpleUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/repositories/SimpleUserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/impl/SimpleBookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/service/impl/SimpleBookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/utilities/impl/UUIDUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problems/SOLID/LibraryManagement/utilities/impl/UUIDUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -305,7 +297,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734343855456</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Moving filter logic to repository as it aligns with the responsibility of repo to acess and filter data using datasource">
+      <option name="closed" value="true" />
+      <created>1734374770911</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1734374770911</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -322,7 +322,8 @@
     <MESSAGE value="Refactoring lib management" />
     <MESSAGE value="Refactored BookFilter.java to return filter logic&#10;and build filter strategy to filter results in memory" />
     <MESSAGE value="Implemented Borrow and return book" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented Borrow and return book" />
+    <MESSAGE value="Moving filter logic to repository as it aligns with the responsibility of repo to acess and filter data using datasource" />
+    <option name="LAST_COMMIT_MESSAGE" value="Moving filter logic to repository as it aligns with the responsibility of repo to acess and filter data using datasource" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

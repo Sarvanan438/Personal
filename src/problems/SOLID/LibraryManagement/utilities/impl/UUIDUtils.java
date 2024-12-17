@@ -4,6 +4,7 @@ import problems.SOLID.LibraryManagement.entities.Id;
 import problems.SOLID.LibraryManagement.entities.StringId;
 import problems.SOLID.LibraryManagement.factories.id.IdFactory;
 
+import java.util.List;
 import java.util.UUID;
 
 public class UUIDUtils {
@@ -18,5 +19,9 @@ public class UUIDUtils {
 
 	public static void setIdFactory(IdFactory idFactory){
 		UUIDUtils.idFactory=idFactory;
+	}
+
+	public static Id findIdMatch(List<Id> ids,Id matchId){
+		return ids.stream().filter(id->id.isEqual(matchId)).findFirst().get();
 	}
 }
