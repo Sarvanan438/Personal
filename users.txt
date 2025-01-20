@@ -1,0 +1,3 @@
+id=57d3fd52-3450-4639-ae0a-fa76f1137393, name=John, registeredOn=2024-12-17
+id=8723b312-5625-4282-add5-1c903446b164, name=John Doe, registeredOn=2024-12-17
+id=8d214ff5-1f7d-40e6-8fb8-4d140effd566, name=Terminator, registeredOn=2024-12-17

@@ -1,0 +1,30 @@
+requirements
+Food delivery app
+bounded context
+1.User and restaurant management
+    we will manage the customer  and restaurant to update menu items prices etc
+    we shall divide into 2 sub domains
+
+    User management and restaurant management
+    These are core sub domain as these will have their individual entities , aggregates etc
+    The reason we split into 2 sub domain is because each of them are good enough for their own context
+    But to keep complexity low and reuse management and other resources we shall use the combination
+
+    Splitting into individual sub domain helps with the user related management ,
+    Seperation of concern by limiting and catered to user related may be new type of user , validation etc
+    Same is true for restaurant , as restaurant has menus and other items which need specific implementation
+
+    We can build and group codes for specific functionalities and build consitent work
+    This also fits will SOLID and keeps the data and behaviour cohesive as each would be related to same functionality
+
+    User management
+    entities : Customer
+    value object : user details
+    aggregate : Customer as root , user details
+                : update customer details , register customer and see his order details
+
+    Restaurant :
+     entities : restaurant ,
+     value object : menu item
+     aggregates : restaurant as root , menu item value object
+                : register, update details , manage menu item

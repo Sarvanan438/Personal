@@ -1,0 +1,4 @@
+id=1ff9a007-d958-47d6-b5cd-08bbfeccb41b, author=MartinBay, title=Transformers, ISBN=12321B1231BB
+id=c0ac7ee3-b732-48ae-a1c0-b22c1fb7e15b, author=MartinBay, title=Transformers, ISBN=12321B1231BB
+id=fbf0f071-98ce-404c-aca1-43bd6f1cdcaf, author=MartinBay, title=Transformers2, ISBN=12321B1231BB
+id=31ea76de-d0a9-410d-82d9-b3d61dd558ab, author=MartinBay, title=Transformers3, ISBN=12321B1231BB

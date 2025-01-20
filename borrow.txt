@@ -1,0 +1,1 @@
+id=00cb0a31-b2e7-4871-a326-d1cc9238ab56, userId=57d3fd52-3450-4639-ae0a-fa76f1137393, bookId=1ff9a007-d958-47d6-b5cd-08bbfeccb41b, borrowedDate=2024-12-17, noOfDueDays=15, returnedDate=2024-12-17
